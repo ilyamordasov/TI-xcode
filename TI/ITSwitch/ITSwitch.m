@@ -108,7 +108,7 @@ static CGFloat const kDisabledOpacity = 0.5f;
     
     // Allow shadow to flow over bounds of the layer
     _rootLayer.masksToBounds = NO;
-
+    
     // Background layer
     _backgroundLayer = [CALayer layer];
     _backgroundLayer.autoresizingMask = kCALayerWidthSizable | kCALayerHeightSizable;
@@ -160,18 +160,18 @@ static CGFloat const kDisabledOpacity = 0.5f;
 }
 
 - (void)drawFocusRingMask {
-	CGFloat cornerRadius = NSHeight([self bounds])/2.0;
-	NSBezierPath *path = [NSBezierPath bezierPathWithRoundedRect:[self bounds] xRadius:cornerRadius yRadius:cornerRadius];
-	[[NSColor blackColor] set];
-	[path fill];
+    CGFloat cornerRadius = NSHeight([self bounds])/2.0;
+    NSBezierPath *path = [NSBezierPath bezierPathWithRoundedRect:[self bounds] xRadius:cornerRadius yRadius:cornerRadius];
+    [[NSColor blackColor] set];
+    [path fill];
 }
 
 - (BOOL)canBecomeKeyView {
-	return [NSApp isFullKeyboardAccessEnabled];
+    return [NSApp isFullKeyboardAccessEnabled];
 }
 
 - (NSRect)focusRingMaskBounds {
-	return [self bounds];
+    return [self bounds];
 }
 
 
@@ -199,7 +199,7 @@ static CGFloat const kDisabledOpacity = 0.5f;
         
         // ------------------------------- Animate Enabled-Disabled state
         _rootLayer.opacity = (self.isEnabled) ? kEnabledOpacity : kDisabledOpacity;
-
+        
         // ------------------------------- Animate Frame
         if (![self hasDragged]) {
             CAMediaTimingFunction *function = [CAMediaTimingFunction functionWithControlPoints:0.25f :1.5f :0.5f :1.f];
@@ -254,12 +254,12 @@ static CGFloat const kDisabledOpacity = 0.5f;
 // ----------------------------------------------------
 
 - (BOOL)acceptsFirstResponder {
-	return [NSApp isFullKeyboardAccessEnabled];
+    return [NSApp isFullKeyboardAccessEnabled];
 }
 
 - (void)mouseDown:(NSEvent *)theEvent {
     if (!self.isEnabled) return;
-
+    
     self.active = YES;
     
     [self reloadLayer];
@@ -267,7 +267,7 @@ static CGFloat const kDisabledOpacity = 0.5f;
 
 - (void)mouseDragged:(NSEvent *)theEvent {
     if (!self.isEnabled) return;
-
+    
     self.dragged = YES;
     
     NSPoint draggingPoint = [self convertPoint:[theEvent locationInWindow] fromView:nil];
@@ -278,7 +278,7 @@ static CGFloat const kDisabledOpacity = 0.5f;
 
 - (void)mouseUp:(NSEvent *)theEvent {
     if (!self.isEnabled) return;
-
+    
     self.active = NO;
     
     BOOL checked = (![self hasDragged]) ? ![self checked] : [self isDraggingTowardsOn];
@@ -295,32 +295,32 @@ static CGFloat const kDisabledOpacity = 0.5f;
 }
 
 - (void)moveLeft:(id)sender {
-	if ([self checked]) {
-		self.checked = NO;
-		[self _invokeTargetAction];
-	}
+    if ([self checked]) {
+        self.checked = NO;
+        [self _invokeTargetAction];
+    }
 }
 
 - (void)moveRight:(id)sender {
-	if ([self checked] == NO) {
-		self.checked = YES;
-		[self _invokeTargetAction];
-	}
+    if ([self checked] == NO) {
+        self.checked = YES;
+        [self _invokeTargetAction];
+    }
 }
 
 - (BOOL)performKeyEquivalent:(NSEvent *)theEvent {
-	BOOL handledKeyEquivalent = NO;
-	if ([[self window] firstResponder] == self) {
-		NSInteger ch = [theEvent keyCode];
-		
-		if (ch == 49) //Space
-		{
-			self.checked = ![self checked];
-			[self _invokeTargetAction];
-			handledKeyEquivalent = YES;
-		}
-	}
-	return handledKeyEquivalent;
+    BOOL handledKeyEquivalent = NO;
+    if ([[self window] firstResponder] == self) {
+        NSInteger ch = [theEvent keyCode];
+        
+        if (ch == 49) //Space
+        {
+            self.checked = ![self checked];
+            [self _invokeTargetAction];
+            handledKeyEquivalent = YES;
+        }
+    }
+    return handledKeyEquivalent;
 }
 
 
@@ -346,7 +346,7 @@ static CGFloat const kDisabledOpacity = 0.5f;
 
 - (void)setChecked:(BOOL)checked {
     if (_checked != checked) {
-		_checked = checked;
+        _checked = checked;
         [self propagateValue:@(checked) forBinding:@"checked"];
     }
     
@@ -396,101 +396,101 @@ static CGFloat const kDisabledOpacity = 0.5f;
 // -----------------------------------
 
 - (BOOL)accessibilityIsIgnored {
-	return NO;
+    return NO;
 }
 
 - (id)accessibilityHitTest:(NSPoint)point {
-	return self;
+    return self;
 }
 
 - (NSArray *)accessibilityAttributeNames {
-	static NSArray *attributes = nil;
-	if (attributes == nil)
-	{
-		NSMutableArray *mutableAttributes = [[super accessibilityAttributeNames] mutableCopy];
-		if (mutableAttributes == nil)
-			mutableAttributes = [NSMutableArray new];
-		
-		// Add attributes
-		if (![mutableAttributes containsObject:NSAccessibilityValueAttribute])
-			[mutableAttributes addObject:NSAccessibilityValueAttribute];
-		
-		if (![mutableAttributes containsObject:NSAccessibilityEnabledAttribute])
-			[mutableAttributes addObject:NSAccessibilityEnabledAttribute];
-		
-		if (![mutableAttributes containsObject:NSAccessibilityDescriptionAttribute])
-			[mutableAttributes addObject:NSAccessibilityDescriptionAttribute];
-		
-		// Remove attributes
-		if ([mutableAttributes containsObject:NSAccessibilityChildrenAttribute])
-			[mutableAttributes removeObject:NSAccessibilityChildrenAttribute];
-		
-		attributes = [mutableAttributes copy];
-	}
-	return attributes;
+    static NSArray *attributes = nil;
+    if (attributes == nil)
+    {
+        NSMutableArray *mutableAttributes = [[super accessibilityAttributeNames] mutableCopy];
+        if (mutableAttributes == nil)
+            mutableAttributes = [NSMutableArray new];
+        
+        // Add attributes
+        if (![mutableAttributes containsObject:NSAccessibilityValueAttribute])
+            [mutableAttributes addObject:NSAccessibilityValueAttribute];
+        
+        if (![mutableAttributes containsObject:NSAccessibilityEnabledAttribute])
+            [mutableAttributes addObject:NSAccessibilityEnabledAttribute];
+        
+        if (![mutableAttributes containsObject:NSAccessibilityDescriptionAttribute])
+            [mutableAttributes addObject:NSAccessibilityDescriptionAttribute];
+        
+        // Remove attributes
+        if ([mutableAttributes containsObject:NSAccessibilityChildrenAttribute])
+            [mutableAttributes removeObject:NSAccessibilityChildrenAttribute];
+        
+        attributes = [mutableAttributes copy];
+    }
+    return attributes;
 }
 
 - (id)accessibilityAttributeValue:(NSString *)attribute {
-	id retVal = nil;
-	if ([attribute isEqualToString:NSAccessibilityRoleAttribute])
-		retVal = NSAccessibilityCheckBoxRole;
-	else if ([attribute isEqualToString:NSAccessibilityValueAttribute])
-		retVal = [NSNumber numberWithInt:self.checked];
-	else if ([attribute isEqualToString:NSAccessibilityEnabledAttribute])
-		retVal = [NSNumber numberWithBool:self.enabled];
-	else
-		retVal = [super accessibilityAttributeValue:attribute];
-	return retVal;
+    id retVal = nil;
+    if ([attribute isEqualToString:NSAccessibilityRoleAttribute])
+        retVal = NSAccessibilityCheckBoxRole;
+    else if ([attribute isEqualToString:NSAccessibilityValueAttribute])
+        retVal = [NSNumber numberWithInt:self.checked];
+    else if ([attribute isEqualToString:NSAccessibilityEnabledAttribute])
+        retVal = [NSNumber numberWithBool:self.enabled];
+    else
+        retVal = [super accessibilityAttributeValue:attribute];
+    return retVal;
 }
 
 - (BOOL)accessibilityIsAttributeSettable:(NSString *)attribute {
-	BOOL retVal;
-	if ([attribute isEqualToString:NSAccessibilityValueAttribute])
-		retVal = YES;
-	else if ([attribute isEqualToString:NSAccessibilityEnabledAttribute])
-		retVal = NO;
-	else if ([attribute isEqualToString:NSAccessibilityDescriptionAttribute])
-		retVal = NO;
-	else
-		retVal = [super accessibilityIsAttributeSettable:attribute];
-	return retVal;
+    BOOL retVal;
+    if ([attribute isEqualToString:NSAccessibilityValueAttribute])
+        retVal = YES;
+    else if ([attribute isEqualToString:NSAccessibilityEnabledAttribute])
+        retVal = NO;
+    else if ([attribute isEqualToString:NSAccessibilityDescriptionAttribute])
+        retVal = NO;
+    else
+        retVal = [super accessibilityIsAttributeSettable:attribute];
+    return retVal;
 }
 
 - (void)accessibilitySetValue:(id)value forAttribute:(NSString *)attribute {
-	if ([attribute isEqualToString:NSAccessibilityValueAttribute]) {
-		BOOL invokeTargetAction = self.checked != [value boolValue];
-		self.checked = [value boolValue];
-		if (invokeTargetAction) {
-			[self _invokeTargetAction];
-		}
-	}
-	else {
-		[super accessibilitySetValue:value forAttribute:attribute];
-	}
+    if ([attribute isEqualToString:NSAccessibilityValueAttribute]) {
+        BOOL invokeTargetAction = self.checked != [value boolValue];
+        self.checked = [value boolValue];
+        if (invokeTargetAction) {
+            [self _invokeTargetAction];
+        }
+    }
+    else {
+        [super accessibilitySetValue:value forAttribute:attribute];
+    }
 }
 
 - (NSArray *)accessibilityActionNames {
-	static NSArray *actions = nil;
-	if (actions == nil)
-	{
-		NSMutableArray *mutableActions = [[super accessibilityActionNames] mutableCopy];
-		if (mutableActions == nil)
-			mutableActions = [NSMutableArray new];
-		if (![mutableActions containsObject:NSAccessibilityPressAction])
-			[mutableActions addObject:NSAccessibilityPressAction];
-		actions = [mutableActions copy];
-	}
-	return actions;
+    static NSArray *actions = nil;
+    if (actions == nil)
+    {
+        NSMutableArray *mutableActions = [[super accessibilityActionNames] mutableCopy];
+        if (mutableActions == nil)
+            mutableActions = [NSMutableArray new];
+        if (![mutableActions containsObject:NSAccessibilityPressAction])
+            [mutableActions addObject:NSAccessibilityPressAction];
+        actions = [mutableActions copy];
+    }
+    return actions;
 }
 
 - (void)accessibilityPerformAction:(NSString *)actionString {
-	if ([actionString isEqualToString:NSAccessibilityPressAction]) {
-		self.checked = ![self checked];
-		[self _invokeTargetAction];
-	}
-	else {
-		[super accessibilityPerformAction:actionString];
-	}
+    if ([actionString isEqualToString:NSAccessibilityPressAction]) {
+        self.checked = ![self checked];
+        [self _invokeTargetAction];
+    }
+    else {
+        [super accessibilityPerformAction:actionString];
+    }
 }
 
 #pragma mark -

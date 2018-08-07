@@ -1,14 +1,14 @@
 //
-//  PlotUITests.swift
-//  PlotUITests
+//  TIUITests.swift
+//  TIUITests
 //
-//  Created by Ilya Mordasov on 06/08/2018.
+//  Created by Ilya Mordasov on 03/08/2018.
 //  Copyright © 2018 Ilya Mordasov. All rights reserved.
 //
 
 import XCTest
 
-class PlotUITests: XCTestCase {
+class TIUITests: XCTestCase {
         
     override func setUp() {
         super.setUp()

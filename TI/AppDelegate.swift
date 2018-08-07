@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  Plot
+//  TI
 //
-//  Created by Ilya Mordasov on 06/08/2018.
+//  Created by Ilya Mordasov on 03/08/2018.
 //  Copyright © 2018 Ilya Mordasov. All rights reserved.
 //
 
