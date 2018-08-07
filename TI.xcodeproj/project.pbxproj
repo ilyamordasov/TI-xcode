@@ -17,7 +17,7 @@
 		89A6E2562114B276007687B8 /* TIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A6E2552114B276007687B8 /* TIUITests.swift */; };
 		89A6E2652114B473007687B8 /* ConfigController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A6E2632114B473007687B8 /* ConfigController.swift */; };
 		89A6E26C2114EEC2007687B8 /* PlotController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A6E26B2114EEC2007687B8 /* PlotController.swift */; };
-		89A6E27021150E9D007687B8 /* SwiftSerial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A6E26F21150E9D007687B8 /* SwiftSerial.swift */; };
+		89FD49AD211A36BF00AF122B /* SwiftSerial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FD49AC211A36BF00AF122B /* SwiftSerial.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,7 +57,7 @@
 		89A6E2572114B276007687B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		89A6E2632114B473007687B8 /* ConfigController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ConfigController.swift; path = ConfigController/ConfigController.swift; sourceTree = "<group>"; };
 		89A6E26B2114EEC2007687B8 /* PlotController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlotController.swift; path = PlotController/PlotController.swift; sourceTree = "<group>"; };
-		89A6E26F21150E9D007687B8 /* SwiftSerial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SwiftSerial.swift; path = /Users/im/Desktop/nrf51/ads1298/xcode/TI/TI/SwiftSerial.swift; sourceTree = "<absolute>"; };
+		89FD49AC211A36BF00AF122B /* SwiftSerial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftSerial.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,11 +116,11 @@
 				89A6E26B2114EEC2007687B8 /* PlotController.swift */,
 				89A6E2402114B276007687B8 /* Info.plist */,
 				89A6E2412114B276007687B8 /* TI.entitlements */,
-				89A6E26F21150E9D007687B8 /* SwiftSerial.swift */,
 				89572D13211A133600318E38 /* ITSwitch.h */,
 				89572D15211A137C00318E38 /* ITSwitch.m */,
 				89572D14211A137C00318E38 /* TI-Bridging-Header.h */,
 				89572D1A211A236500318E38 /* PlotView.swift */,
+				89FD49AC211A36BF00AF122B /* SwiftSerial.swift */,
 			);
 			path = TI;
 			sourceTree = "<group>";
@@ -276,10 +276,10 @@
 			files = (
 				89A6E23A2114B273007687B8 /* ViewController.swift in Sources */,
 				89A6E2652114B473007687B8 /* ConfigController.swift in Sources */,
+				89FD49AD211A36BF00AF122B /* SwiftSerial.swift in Sources */,
 				89572D1B211A236500318E38 /* PlotView.swift in Sources */,
 				89572D16211A137C00318E38 /* ITSwitch.m in Sources */,
 				89A6E2382114B273007687B8 /* AppDelegate.swift in Sources */,
-				89A6E27021150E9D007687B8 /* SwiftSerial.swift in Sources */,
 				89A6E26C2114EEC2007687B8 /* PlotController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

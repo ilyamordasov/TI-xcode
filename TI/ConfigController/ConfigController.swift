@@ -113,6 +113,7 @@ extension ConfigController: NSTableViewDelegate
             case tableView.tableColumns[11]:
                 view = ITSwitch()
                 (view as! ITSwitch).setBoundsSize(NSSize(width: 32, height: 20))
+                (view as! ITSwitch).sizeToFit()
                 //(view as! ITSwitch).frame.size.height = 20
                 (view as! ITSwitch).checked = configs[row][2][0] as! Bool
                 return (view as! NSView)
