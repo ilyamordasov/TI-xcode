@@ -13,15 +13,7 @@ import Foundation
 
 class PlotController: NSViewController
 {
-    @IBOutlet weak var ports: NSComboBox!
-    @IBOutlet weak var baud: NSComboBox!
-    @IBOutlet weak var databits: NSComboBox!
-    @IBOutlet weak var parity: NSComboBox!
-    @IBOutlet weak var stopbits: NSComboBox!
     @IBOutlet weak var plot: PlotView!
-    @IBOutlet weak var serial: Serial!
-    
-    let serialPort:Serial! = nil
     
     override func viewDidLoad()
     {

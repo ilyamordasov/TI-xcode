@@ -12,6 +12,9 @@ class Serial: NSObject, ORSSerialPortDelegate, NSUserNotificationCenterDelegate
 {
     @objc let serialPortManager = ORSSerialPortManager.shared()
     @objc let availableBaudRates = [300, 1200, 2400, 4800, 9600, 14400, 19200, 28800, 38400, 57600, 115200, 230400]
+    @objc let availableNumberOfDataBits = [5, 6, 7, 8]
+    @objc let availableParity = ["None", "Odd", "Even"]
+    @objc let availableNumberOfStopBits = [1, 1.5, 2]
     @objc dynamic var shouldAddLineEnding = false
     
     @objc dynamic var serialPort: ORSSerialPort?
@@ -33,6 +36,7 @@ class Serial: NSObject, ORSSerialPortDelegate, NSUserNotificationCenterDelegate
         nc.addObserver(self, selector: #selector(serialPortsWereDisconnected(_:)), name: NSNotification.Name.ORSSerialPortsWereDisconnected, object: nil)
         
         NSUserNotificationCenter.default.delegate = self
+        print(serialPortManager.availablePorts)
     }
     
     deinit

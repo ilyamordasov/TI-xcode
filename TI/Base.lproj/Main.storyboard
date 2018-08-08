@@ -758,85 +758,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="1200" height="600"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <comboBox verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9nR-KE-6XS">
-                                <rect key="frame" x="10" y="560" width="250" height="26"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Choose a port" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="xqE-zf-Bxw">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </comboBoxCell>
-                                <connections>
-                                    <binding destination="mJK-XQ-9Mc" name="value" keyPath="serialPort" previousBinding="uHc-I4-C7L" id="EGx-GS-jdL"/>
-                                    <binding destination="mJK-XQ-9Mc" name="content" keyPath="serialPortManager.availablePorts" id="ABk-Lf-EGF"/>
-                                    <binding destination="mJK-XQ-9Mc" name="contentValues" keyPath="serialPortManager.availablePorts.name" previousBinding="ABk-Lf-EGF" id="uHc-I4-C7L"/>
-                                </connections>
-                            </comboBox>
-                            <comboBox verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9xd-2z-4CF">
-                                <rect key="frame" x="272" y="560" width="100" height="26"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" borderStyle="bezel" title="115200" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="7W1-Nf-SHR">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </comboBoxCell>
-                                <connections>
-                                    <binding destination="mJK-XQ-9Mc" name="contentValues" keyPath="availableBaudRates" id="meg-Yw-eDe"/>
-                                    <binding destination="mJK-XQ-9Mc" name="value" keyPath="serialPort.baudRate" previousBinding="meg-Yw-eDe" id="s0O-bl-I4W"/>
-                                </connections>
-                            </comboBox>
-                            <comboBox verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kqq-FQ-RCI">
-                                <rect key="frame" x="384" y="560" width="50" height="26"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" borderStyle="bezel" title="8" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="mp0-2i-xLc">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                    <objectValues>
-                                        <string>5</string>
-                                        <string>6</string>
-                                        <string>7</string>
-                                        <string>8</string>
-                                    </objectValues>
-                                </comboBoxCell>
-                                <connections>
-                                    <binding destination="mJK-XQ-9Mc" name="value" keyPath="serialPort.numberOfDataBits" id="UzZ-DO-eBO"/>
-                                </connections>
-                            </comboBox>
-                            <comboBox verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tGR-Cc-aNk">
-                                <rect key="frame" x="447" y="560" width="70" height="26"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" borderStyle="bezel" title="none" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="Bfp-BU-0EW">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                    <objectValues>
-                                        <string>none</string>
-                                        <string>odd</string>
-                                        <string>even</string>
-                                    </objectValues>
-                                </comboBoxCell>
-                                <connections>
-                                    <binding destination="mJK-XQ-9Mc" name="value" keyPath="serialPort.parity" id="rc6-Wx-YfC"/>
-                                </connections>
-                            </comboBox>
-                            <comboBox verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bXT-bw-8FS">
-                                <rect key="frame" x="529" y="560" width="50" height="26"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" borderStyle="bezel" title="1" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="cwL-AZ-imq">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                    <objectValues>
-                                        <string>1</string>
-                                        <string>1.5</string>
-                                        <string>2</string>
-                                    </objectValues>
-                                </comboBoxCell>
-                                <connections>
-                                    <binding destination="mJK-XQ-9Mc" name="value" keyPath="serialPort.numberOfStopBits" id="AYb-1X-5EV"/>
-                                </connections>
-                            </comboBox>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J9m-Kf-QL9">
                                 <rect key="frame" x="590" y="557" width="120" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -846,6 +767,11 @@
                                 </buttonCell>
                                 <connections>
                                     <action selector="connect:" target="mJK-XQ-9Mc" id="BEn-xy-TcU"/>
+                                    <binding destination="mJK-XQ-9Mc" name="enabled" keyPath="serialPort" id="206-tX-00D">
+                                        <dictionary key="options">
+                                            <string key="NSValueTransformerName">NSIsNotNil</string>
+                                        </dictionary>
+                                    </binding>
                                 </connections>
                             </button>
                             <containerView canDrawConcurrently="YES" focusRingType="none" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c7M-VI-Mvq" customClass="PlotView" customModule="TI" customModuleProvider="target">
@@ -855,16 +781,106 @@
                                     <segue destination="fpj-15-5gY" kind="embed" id="lv7-wv-6fg"/>
                                 </connections>
                             </containerView>
+                            <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cEt-Me-4OV">
+                                <rect key="frame" x="8" y="560" width="252" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="USD-bC-QUr" id="EsE-Q8-QIy">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="menu"/>
+                                    <menu key="menu" id="Frk-TP-6LO">
+                                        <items>
+                                            <menuItem title="Item 1" state="on" id="USD-bC-QUr"/>
+                                            <menuItem title="Item 2" id="qKF-P5-Ytp"/>
+                                            <menuItem title="Item 3" id="kYB-Qb-feu"/>
+                                        </items>
+                                    </menu>
+                                </popUpButtonCell>
+                                <connections>
+                                    <binding destination="mJK-XQ-9Mc" name="content" keyPath="serialPortManager.availablePorts" id="Vpx-yq-hnf"/>
+                                    <binding destination="mJK-XQ-9Mc" name="contentValues" keyPath="serialPortManager.availablePorts.name" previousBinding="Vpx-yq-hnf" id="4yq-ee-1X1"/>
+                                    <binding destination="mJK-XQ-9Mc" name="selectedObject" keyPath="serialPort" previousBinding="4yq-ee-1X1" id="NiL-Et-rz3"/>
+                                </connections>
+                            </popUpButton>
+                            <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vRP-4Q-La9">
+                                <rect key="frame" x="270" y="560" width="102" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="zHD-D5-2m3" id="oFQ-MS-AYP">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="menu"/>
+                                    <menu key="menu" id="bwH-3p-J8h">
+                                        <items>
+                                            <menuItem title="Item 1" state="on" id="zHD-D5-2m3"/>
+                                            <menuItem title="Item 2" id="PWI-Fd-t4j"/>
+                                            <menuItem title="Item 3" id="mrr-yh-gnd"/>
+                                        </items>
+                                    </menu>
+                                </popUpButtonCell>
+                                <connections>
+                                    <binding destination="mJK-XQ-9Mc" name="contentValues" keyPath="availableBaudRates" id="LCD-Ia-t3f"/>
+                                    <binding destination="mJK-XQ-9Mc" name="selectedObject" keyPath="serialPort.baudRate" previousBinding="LCD-Ia-t3f" id="zy7-8n-aYF"/>
+                                </connections>
+                            </popUpButton>
+                            <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LOe-O7-Kdg">
+                                <rect key="frame" x="382" y="560" width="52" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="54H-kJ-TBi" id="cDG-LH-sVL">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="menu"/>
+                                    <menu key="menu" id="zax-ql-8jM">
+                                        <items>
+                                            <menuItem title="Item 1" state="on" id="54H-kJ-TBi"/>
+                                            <menuItem title="Item 2" id="w0w-LG-OPM"/>
+                                            <menuItem title="Item 3" id="WQs-0s-r2Y"/>
+                                        </items>
+                                    </menu>
+                                </popUpButtonCell>
+                                <connections>
+                                    <binding destination="mJK-XQ-9Mc" name="contentValues" keyPath="availableNumberOfDataBits" id="35A-zr-Y0y"/>
+                                    <binding destination="mJK-XQ-9Mc" name="selectedTag" keyPath="serialPort.numberOfDataBits" previousBinding="35A-zr-Y0y" id="d9E-um-n6N"/>
+                                </connections>
+                            </popUpButton>
+                            <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A1U-Kz-5ha">
+                                <rect key="frame" x="445" y="560" width="72" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="kUz-bS-ZHv" id="rEq-YR-x0f">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="menu"/>
+                                    <menu key="menu" id="tA3-KT-si3">
+                                        <items>
+                                            <menuItem title="Item 1" state="on" id="kUz-bS-ZHv"/>
+                                            <menuItem title="Item 2" id="gC1-lK-Erm"/>
+                                            <menuItem title="Item 3" id="7wr-ba-pxy"/>
+                                        </items>
+                                    </menu>
+                                </popUpButtonCell>
+                                <connections>
+                                    <binding destination="mJK-XQ-9Mc" name="contentValues" keyPath="availableParity" id="0d1-VU-pgh"/>
+                                    <binding destination="mJK-XQ-9Mc" name="selectedTag" keyPath="serialPort.parity" previousBinding="0d1-VU-pgh" id="ozX-Hf-tDA"/>
+                                </connections>
+                            </popUpButton>
+                            <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="URd-iw-ToV">
+                                <rect key="frame" x="527" y="560" width="52" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="Qs7-Fd-oxW" id="V2J-47-xcr">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="menu"/>
+                                    <menu key="menu" id="Ufb-Eg-JXJ">
+                                        <items>
+                                            <menuItem title="Item 1" state="on" id="Qs7-Fd-oxW"/>
+                                            <menuItem title="Item 2" id="36T-JR-O00"/>
+                                            <menuItem title="Item 3" id="Tjc-xr-a0i"/>
+                                        </items>
+                                    </menu>
+                                </popUpButtonCell>
+                                <connections>
+                                    <binding destination="mJK-XQ-9Mc" name="contentValues" keyPath="availableNumberOfStopBits" id="dFo-c2-hoh"/>
+                                    <binding destination="mJK-XQ-9Mc" name="selectedTag" keyPath="serialPort.numberOfStopBits" previousBinding="dFo-c2-hoh" id="7eO-nL-8nT"/>
+                                </connections>
+                            </popUpButton>
                         </subviews>
                     </view>
                     <connections>
-                        <outlet property="baud" destination="9xd-2z-4CF" id="p0r-u8-zdl"/>
-                        <outlet property="databits" destination="kqq-FQ-RCI" id="SzZ-Dh-C1D"/>
-                        <outlet property="parity" destination="tGR-Cc-aNk" id="VGv-Hj-4lJ"/>
                         <outlet property="plot" destination="c7M-VI-Mvq" id="Biy-JM-CtE"/>
-                        <outlet property="ports" destination="9nR-KE-6XS" id="Pyy-Q1-AwW"/>
-                        <outlet property="serial" destination="mJK-XQ-9Mc" id="GDE-Mw-ZP0"/>
-                        <outlet property="stopbits" destination="bXT-bw-8FS" id="ZDc-yU-rAm"/>
                     </connections>
                 </viewController>
                 <customObject id="Iap-6y-vxL" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -1297,7 +1313,7 @@
                                     </subviews>
                                 </clipView>
                                 <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="Zjs-Vi-Bni">
-                                    <rect key="frame" x="1" y="7" width="0.0" height="16"/>
+                                    <rect key="frame" x="1" y="8" width="0.0" height="15"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="zlz-We-hbi">

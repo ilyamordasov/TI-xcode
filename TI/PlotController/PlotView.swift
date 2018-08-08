@@ -16,20 +16,23 @@ class PlotView: NSView {
     var min:Int = 0
     var max:Int = 0
     
-    override func draw(_ dirtyRect: NSRect) {
-        //self.subviews.map({ $0.removeFromSuperview() })
-        self.subviews.forEach({ $0.removeFromSuperview() })
+    override func draw(_ dirtyRect: NSRect)
+    {
         self.context = (NSGraphicsContext.current?.cgContext)!;
         super.draw(dirtyRect)
         drawBackground(rect: dirtyRect)
         drawHorizontalSegments(rect: dirtyRect)
         drawVerticalSegments(rect: dirtyRect)
         drawIsolines(rect: dirtyRect)
-        drawVerticalLabels(rect:dirtyRect)
+        
         if self.data.count > 1
         {
+            //self.subviews.map({ $0.removeFromSuperview() })
+            self.subviews.forEach({ $0.removeFromSuperview() })
+            
             self.min = self.data.min()!
             self.max = self.data.max()!
+            drawVerticalLabels(rect:dirtyRect)
             
             for i in 0...self.data.count-1
             {
@@ -130,14 +133,17 @@ class PlotView: NSView {
     
     public func drawBezier(index: Int)
     {
+        let y_old:Int = (index == 0) ? 0 : map(x: self.data[index-1], in_min: min, in_max: max, out_min: 0 - Int(self.frame.height/2) + offset, out_max: Int(self.frame.height/2) - offset)
         let y: Int = map(x: self.data[index], in_min: min, in_max: max, out_min: 0 - Int(self.frame.height/2) + offset, out_max: Int(self.frame.height/2) - offset)
+        
+        let scaledY_old:Int = Int(self.frame.height/2) + y_old
         let scaledY:Int = Int(self.frame.height/2) + y
         
         self.context?.setStrokeColor(NSColor.blue.cgColor)
         self.context?.setLineWidth(1.0)
+        self.context?.move(to: CGPoint(x: index-1, y: scaledY_old))
         self.context?.addLine(to: CGPoint(x: index, y: scaledY))
         self.context?.drawPath(using: .fillStroke)
-        self.context?.move(to: CGPoint(x: index, y: scaledY))
     }
     
     func map(x: Int, in_min: Int, in_max:Int, out_min: Int, out_max: Int) -> Int
