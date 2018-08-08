@@ -15,13 +15,15 @@ class PlotController: NSViewController, NSUserNotificationCenterDelegate
 {
     @IBOutlet weak var plot: PlotView!
     
+    var n:Int = 0;
+    let ecg = ECG_DataSet()
+    var timer:Timer!
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
         // Do view setup here.
         NotificationCenter.default.addObserver(self, selector: #selector(self.newUARTDataIsReady), name: NSNotification.Name(rawValue: "newUARTDataIsReady"), object: nil)
-
-       //Timer.scheduledTimer(timeInterval: 0.0001, target: self, selector: #selector(runTimeCode), userInfo: nil, repeats: true)
     }
     
     @objc func newUARTDataIsReady(notif: NSNotification)
@@ -34,11 +36,32 @@ class PlotController: NSViewController, NSUserNotificationCenterDelegate
         }
     }
     
+    @IBAction func testECG_event(_ sender: NSButton)
+    {
+        if sender.title == "Test ECG"
+        {
+            sender.title = "Stop ECG"
+            timer = Timer.scheduledTimer(timeInterval: 1/115200, target: self, selector: #selector(runTimeCode), userInfo: nil, repeats: true)
+        }
+        else
+        {
+            sender.title = "Test ECG"
+            n = 0
+            plot.removeData()
+            timer.invalidate()
+        }
+    }
+    
     @objc func runTimeCode()
     {
+        let data:Int = self.ecg.ecg_dataset[n]
+        plot.add(point: data)
+        plot.display()
         
-        
-        //plot.add(point: res)
-        //plot.display()
+        n += 1
+        if n >= self.ecg.ecg_dataset.count
+        {
+            n = 0
+        }
     }
 }

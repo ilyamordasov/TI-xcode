@@ -31,7 +31,7 @@ class PlotView: NSView {
             self.subviews.forEach({ $0.removeFromSuperview() })
             
             self.min = self.data.min()!
-            self.max = self.data.max()!
+            self.max = self.data.max()! + 1
             drawVerticalLabels(rect:dirtyRect)
             
             for i in 0...self.data.count-1
@@ -119,7 +119,7 @@ class PlotView: NSView {
     
     public func add(point: Int)
     {
-        if (data.count >= Int(self.frame.width) - offset)
+        if (data.count >= Int(self.frame.width))
         {
             data.remove(at: 0)
         }
@@ -139,7 +139,7 @@ class PlotView: NSView {
         let scaledY_old:Int = Int(self.frame.height/2) + y_old
         let scaledY:Int = Int(self.frame.height/2) + y
         
-        self.context?.setStrokeColor(NSColor.blue.cgColor)
+        self.context?.setStrokeColor(NSColor.lightGray.cgColor)
         self.context?.setLineWidth(1.0)
         self.context?.move(to: CGPoint(x: index-1, y: scaledY_old))
         self.context?.addLine(to: CGPoint(x: index, y: scaledY))

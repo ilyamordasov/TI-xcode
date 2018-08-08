@@ -796,9 +796,9 @@
                                     </menu>
                                 </popUpButtonCell>
                                 <connections>
+                                    <binding destination="mJK-XQ-9Mc" name="selectedObject" keyPath="serialPort" previousBinding="4yq-ee-1X1" id="NiL-Et-rz3"/>
                                     <binding destination="mJK-XQ-9Mc" name="content" keyPath="serialPortManager.availablePorts" id="Vpx-yq-hnf"/>
                                     <binding destination="mJK-XQ-9Mc" name="contentValues" keyPath="serialPortManager.availablePorts.name" previousBinding="Vpx-yq-hnf" id="4yq-ee-1X1"/>
-                                    <binding destination="mJK-XQ-9Mc" name="selectedObject" keyPath="serialPort" previousBinding="4yq-ee-1X1" id="NiL-Et-rz3"/>
                                 </connections>
                             </popUpButton>
                             <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vRP-4Q-La9">
@@ -877,6 +877,17 @@
                                     <binding destination="mJK-XQ-9Mc" name="selectedTag" keyPath="serialPort.numberOfStopBits" previousBinding="dFo-c2-hoh" id="7eO-nL-8nT"/>
                                 </connections>
                             </popUpButton>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xfr-wN-Lk0">
+                                <rect key="frame" x="1098" y="487" width="82" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="squareTextured" title="Test ECG" bezelStyle="texturedSquare" alignment="center" borderStyle="border" inset="2" id="WUn-rh-zmv">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="testECG_event:" target="hBu-3B-qnA" id="sve-mT-TRf"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </view>
                     <connections>
