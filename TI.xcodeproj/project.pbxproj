@@ -7,17 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		89572D16211A137C00318E38 /* ITSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 89572D15211A137C00318E38 /* ITSwitch.m */; };
-		89572D1B211A236500318E38 /* PlotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89572D1A211A236500318E38 /* PlotView.swift */; };
 		89A6E2382114B273007687B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A6E2372114B273007687B8 /* AppDelegate.swift */; };
 		89A6E23A2114B273007687B8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A6E2392114B273007687B8 /* ViewController.swift */; };
 		89A6E23C2114B276007687B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89A6E23B2114B276007687B8 /* Assets.xcassets */; };
 		89A6E23F2114B276007687B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89A6E23D2114B276007687B8 /* Main.storyboard */; };
 		89A6E24B2114B276007687B8 /* TITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A6E24A2114B276007687B8 /* TITests.swift */; };
 		89A6E2562114B276007687B8 /* TIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A6E2552114B276007687B8 /* TIUITests.swift */; };
-		89A6E2652114B473007687B8 /* ConfigController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A6E2632114B473007687B8 /* ConfigController.swift */; };
-		89A6E26C2114EEC2007687B8 /* PlotController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A6E26B2114EEC2007687B8 /* PlotController.swift */; };
-		89FD49AD211A36BF00AF122B /* SwiftSerial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FD49AC211A36BF00AF122B /* SwiftSerial.swift */; };
+		89C2026B211A516900A23CA4 /* ITSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 89C20265211A516800A23CA4 /* ITSwitch.m */; };
+		89C2026C211A516900A23CA4 /* PlotController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C20267211A516800A23CA4 /* PlotController.swift */; };
+		89C2026D211A516900A23CA4 /* PlotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C20268211A516800A23CA4 /* PlotView.swift */; };
+		89C2026E211A516900A23CA4 /* ConfigController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C2026A211A516800A23CA4 /* ConfigController.swift */; };
+		89C2027D211A521C00A23CA4 /* ORSSerialPacketDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 89C20273211A521C00A23CA4 /* ORSSerialPacketDescriptor.m */; };
+		89C2027E211A521C00A23CA4 /* ORSSerialBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 89C20275211A521C00A23CA4 /* ORSSerialBuffer.m */; };
+		89C2027F211A521C00A23CA4 /* ORSSerialRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 89C20276211A521C00A23CA4 /* ORSSerialRequest.m */; };
+		89C20280211A521C00A23CA4 /* ORSSerialPortManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 89C20277211A521C00A23CA4 /* ORSSerialPortManager.m */; };
+		89C20281211A521C00A23CA4 /* ORSSerialPort.m in Sources */ = {isa = PBXBuildFile; fileRef = 89C20278211A521C00A23CA4 /* ORSSerialPort.m */; };
+		89C20283211A5EC500A23CA4 /* Serial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C20282211A5EC500A23CA4 /* Serial.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,10 +43,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		89572D13211A133600318E38 /* ITSwitch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ITSwitch.h; path = ITSwitch/ITSwitch.h; sourceTree = "<group>"; };
-		89572D14211A137C00318E38 /* TI-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TI-Bridging-Header.h"; sourceTree = "<group>"; };
-		89572D15211A137C00318E38 /* ITSwitch.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ITSwitch.m; path = ITSwitch/ITSwitch.m; sourceTree = "<group>"; };
-		89572D1A211A236500318E38 /* PlotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlotView.swift; path = PlotController/PlotView.swift; sourceTree = "<group>"; };
 		89A6E2342114B272007687B8 /* TI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89A6E2372114B273007687B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89A6E2392114B273007687B8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -55,9 +56,23 @@
 		89A6E2512114B276007687B8 /* TIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		89A6E2552114B276007687B8 /* TIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TIUITests.swift; sourceTree = "<group>"; };
 		89A6E2572114B276007687B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		89A6E2632114B473007687B8 /* ConfigController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ConfigController.swift; path = ConfigController/ConfigController.swift; sourceTree = "<group>"; };
-		89A6E26B2114EEC2007687B8 /* PlotController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlotController.swift; path = PlotController/PlotController.swift; sourceTree = "<group>"; };
-		89FD49AC211A36BF00AF122B /* SwiftSerial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftSerial.swift; sourceTree = "<group>"; };
+		89C20264211A516800A23CA4 /* ITSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITSwitch.h; sourceTree = "<group>"; };
+		89C20265211A516800A23CA4 /* ITSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITSwitch.m; sourceTree = "<group>"; };
+		89C20267211A516800A23CA4 /* PlotController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlotController.swift; sourceTree = "<group>"; };
+		89C20268211A516800A23CA4 /* PlotView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlotView.swift; sourceTree = "<group>"; };
+		89C2026A211A516800A23CA4 /* ConfigController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigController.swift; sourceTree = "<group>"; };
+		89C20273211A521C00A23CA4 /* ORSSerialPacketDescriptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORSSerialPacketDescriptor.m; sourceTree = "<group>"; };
+		89C20274211A521C00A23CA4 /* ORSSerialPort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORSSerialPort.h; sourceTree = "<group>"; };
+		89C20275211A521C00A23CA4 /* ORSSerialBuffer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORSSerialBuffer.m; sourceTree = "<group>"; };
+		89C20276211A521C00A23CA4 /* ORSSerialRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORSSerialRequest.m; sourceTree = "<group>"; };
+		89C20277211A521C00A23CA4 /* ORSSerialPortManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORSSerialPortManager.m; sourceTree = "<group>"; };
+		89C20278211A521C00A23CA4 /* ORSSerialPort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORSSerialPort.m; sourceTree = "<group>"; };
+		89C20279211A521C00A23CA4 /* ORSSerialPacketDescriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORSSerialPacketDescriptor.h; sourceTree = "<group>"; };
+		89C2027A211A521C00A23CA4 /* ORSSerialBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORSSerialBuffer.h; sourceTree = "<group>"; };
+		89C2027B211A521C00A23CA4 /* ORSSerialRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORSSerialRequest.h; sourceTree = "<group>"; };
+		89C2027C211A521C00A23CA4 /* ORSSerialPortManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORSSerialPortManager.h; sourceTree = "<group>"; };
+		89C20282211A5EC500A23CA4 /* Serial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Serial.swift; sourceTree = "<group>"; };
+		89FD49C9211A4AC800AF122B /* TI-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "TI-Bridging-Header.h"; path = "TI/TI-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,19 +123,17 @@
 		89A6E2362114B272007687B8 /* TI */ = {
 			isa = PBXGroup;
 			children = (
+				89C20272211A521C00A23CA4 /* ORSSerial */,
+				89FD49C9211A4AC800AF122B /* TI-Bridging-Header.h */,
 				89A6E2372114B273007687B8 /* AppDelegate.swift */,
 				89A6E2392114B273007687B8 /* ViewController.swift */,
+				89C20269211A516800A23CA4 /* ConfigController */,
+				89C20263211A516800A23CA4 /* ITSwitch */,
+				89C20266211A516800A23CA4 /* PlotController */,
 				89A6E23B2114B276007687B8 /* Assets.xcassets */,
 				89A6E23D2114B276007687B8 /* Main.storyboard */,
-				89A6E2632114B473007687B8 /* ConfigController.swift */,
-				89A6E26B2114EEC2007687B8 /* PlotController.swift */,
 				89A6E2402114B276007687B8 /* Info.plist */,
 				89A6E2412114B276007687B8 /* TI.entitlements */,
-				89572D13211A133600318E38 /* ITSwitch.h */,
-				89572D15211A137C00318E38 /* ITSwitch.m */,
-				89572D14211A137C00318E38 /* TI-Bridging-Header.h */,
-				89572D1A211A236500318E38 /* PlotView.swift */,
-				89FD49AC211A36BF00AF122B /* SwiftSerial.swift */,
 			);
 			path = TI;
 			sourceTree = "<group>";
@@ -141,6 +154,50 @@
 				89A6E2572114B276007687B8 /* Info.plist */,
 			);
 			path = TIUITests;
+			sourceTree = "<group>";
+		};
+		89C20263211A516800A23CA4 /* ITSwitch */ = {
+			isa = PBXGroup;
+			children = (
+				89C20264211A516800A23CA4 /* ITSwitch.h */,
+				89C20265211A516800A23CA4 /* ITSwitch.m */,
+			);
+			path = ITSwitch;
+			sourceTree = "<group>";
+		};
+		89C20266211A516800A23CA4 /* PlotController */ = {
+			isa = PBXGroup;
+			children = (
+				89C20267211A516800A23CA4 /* PlotController.swift */,
+				89C20268211A516800A23CA4 /* PlotView.swift */,
+				89C20282211A5EC500A23CA4 /* Serial.swift */,
+			);
+			path = PlotController;
+			sourceTree = "<group>";
+		};
+		89C20269211A516800A23CA4 /* ConfigController */ = {
+			isa = PBXGroup;
+			children = (
+				89C2026A211A516800A23CA4 /* ConfigController.swift */,
+			);
+			path = ConfigController;
+			sourceTree = "<group>";
+		};
+		89C20272211A521C00A23CA4 /* ORSSerial */ = {
+			isa = PBXGroup;
+			children = (
+				89C20273211A521C00A23CA4 /* ORSSerialPacketDescriptor.m */,
+				89C20274211A521C00A23CA4 /* ORSSerialPort.h */,
+				89C20275211A521C00A23CA4 /* ORSSerialBuffer.m */,
+				89C20276211A521C00A23CA4 /* ORSSerialRequest.m */,
+				89C20277211A521C00A23CA4 /* ORSSerialPortManager.m */,
+				89C20278211A521C00A23CA4 /* ORSSerialPort.m */,
+				89C20279211A521C00A23CA4 /* ORSSerialPacketDescriptor.h */,
+				89C2027A211A521C00A23CA4 /* ORSSerialBuffer.h */,
+				89C2027B211A521C00A23CA4 /* ORSSerialRequest.h */,
+				89C2027C211A521C00A23CA4 /* ORSSerialPortManager.h */,
+			);
+			path = ORSSerial;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,13 +331,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89C2027F211A521C00A23CA4 /* ORSSerialRequest.m in Sources */,
+				89C2026B211A516900A23CA4 /* ITSwitch.m in Sources */,
+				89C2026E211A516900A23CA4 /* ConfigController.swift in Sources */,
+				89C2027E211A521C00A23CA4 /* ORSSerialBuffer.m in Sources */,
+				89C2026D211A516900A23CA4 /* PlotView.swift in Sources */,
 				89A6E23A2114B273007687B8 /* ViewController.swift in Sources */,
-				89A6E2652114B473007687B8 /* ConfigController.swift in Sources */,
-				89FD49AD211A36BF00AF122B /* SwiftSerial.swift in Sources */,
-				89572D1B211A236500318E38 /* PlotView.swift in Sources */,
-				89572D16211A137C00318E38 /* ITSwitch.m in Sources */,
+				89C2026C211A516900A23CA4 /* PlotController.swift in Sources */,
+				89C20283211A5EC500A23CA4 /* Serial.swift in Sources */,
+				89C20280211A521C00A23CA4 /* ORSSerialPortManager.m in Sources */,
+				89C20281211A521C00A23CA4 /* ORSSerialPort.m in Sources */,
+				89C2027D211A521C00A23CA4 /* ORSSerialPacketDescriptor.m in Sources */,
 				89A6E2382114B273007687B8 /* AppDelegate.swift in Sources */,
-				89A6E26C2114EEC2007687B8 /* PlotController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

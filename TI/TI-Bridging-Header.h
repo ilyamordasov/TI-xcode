@@ -3,3 +3,8 @@
 //
 
 #import "ITSwitch.h"
+#import "ORSSerialPort.h"
+#import "ORSSerialPortManager.h"
+#import "ORSSerialPacketDescriptor.h"
+#import "ORSSerialBuffer.h"
+#import "ORSSerialRequest.h"

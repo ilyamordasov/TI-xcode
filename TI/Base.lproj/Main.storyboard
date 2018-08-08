@@ -766,6 +766,11 @@
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </comboBoxCell>
+                                <connections>
+                                    <binding destination="mJK-XQ-9Mc" name="value" keyPath="serialPort" previousBinding="uHc-I4-C7L" id="EGx-GS-jdL"/>
+                                    <binding destination="mJK-XQ-9Mc" name="content" keyPath="serialPortManager.availablePorts" id="ABk-Lf-EGF"/>
+                                    <binding destination="mJK-XQ-9Mc" name="contentValues" keyPath="serialPortManager.availablePorts.name" previousBinding="ABk-Lf-EGF" id="uHc-I4-C7L"/>
+                                </connections>
                             </comboBox>
                             <comboBox verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9xd-2z-4CF">
                                 <rect key="frame" x="272" y="560" width="100" height="26"/>
@@ -774,25 +779,11 @@
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                    <objectValues>
-                                        <string>300</string>
-                                        <string>600</string>
-                                        <string>1200</string>
-                                        <string>1800</string>
-                                        <string>2400</string>
-                                        <string>3600</string>
-                                        <string>4800</string>
-                                        <string>7200</string>
-                                        <string>9600</string>
-                                        <string>14400</string>
-                                        <string>19200</string>
-                                        <string>28800</string>
-                                        <string>38400</string>
-                                        <string>57600</string>
-                                        <string>115200</string>
-                                        <string>230400</string>
-                                    </objectValues>
                                 </comboBoxCell>
+                                <connections>
+                                    <binding destination="mJK-XQ-9Mc" name="contentValues" keyPath="availableBaudRates" id="meg-Yw-eDe"/>
+                                    <binding destination="mJK-XQ-9Mc" name="value" keyPath="serialPort.baudRate" previousBinding="meg-Yw-eDe" id="s0O-bl-I4W"/>
+                                </connections>
                             </comboBox>
                             <comboBox verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kqq-FQ-RCI">
                                 <rect key="frame" x="384" y="560" width="50" height="26"/>
@@ -808,6 +799,9 @@
                                         <string>8</string>
                                     </objectValues>
                                 </comboBoxCell>
+                                <connections>
+                                    <binding destination="mJK-XQ-9Mc" name="value" keyPath="serialPort.numberOfDataBits" id="UzZ-DO-eBO"/>
+                                </connections>
                             </comboBox>
                             <comboBox verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tGR-Cc-aNk">
                                 <rect key="frame" x="447" y="560" width="70" height="26"/>
@@ -822,6 +816,9 @@
                                         <string>even</string>
                                     </objectValues>
                                 </comboBoxCell>
+                                <connections>
+                                    <binding destination="mJK-XQ-9Mc" name="value" keyPath="serialPort.parity" id="rc6-Wx-YfC"/>
+                                </connections>
                             </comboBox>
                             <comboBox verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bXT-bw-8FS">
                                 <rect key="frame" x="529" y="560" width="50" height="26"/>
@@ -836,6 +833,9 @@
                                         <string>2</string>
                                     </objectValues>
                                 </comboBoxCell>
+                                <connections>
+                                    <binding destination="mJK-XQ-9Mc" name="value" keyPath="serialPort.numberOfStopBits" id="AYb-1X-5EV"/>
+                                </connections>
                             </comboBox>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J9m-Kf-QL9">
                                 <rect key="frame" x="590" y="557" width="120" height="32"/>
@@ -845,7 +845,7 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="connect_event:" target="hBu-3B-qnA" id="Sdd-BZ-Ohb"/>
+                                    <action selector="connect:" target="mJK-XQ-9Mc" id="BEn-xy-TcU"/>
                                 </connections>
                             </button>
                             <containerView canDrawConcurrently="YES" focusRingType="none" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c7M-VI-Mvq" customClass="PlotView" customModule="TI" customModuleProvider="target">
@@ -863,10 +863,13 @@
                         <outlet property="parity" destination="tGR-Cc-aNk" id="VGv-Hj-4lJ"/>
                         <outlet property="plot" destination="c7M-VI-Mvq" id="Biy-JM-CtE"/>
                         <outlet property="ports" destination="9nR-KE-6XS" id="Pyy-Q1-AwW"/>
+                        <outlet property="serial" destination="mJK-XQ-9Mc" id="GDE-Mw-ZP0"/>
                         <outlet property="stopbits" destination="bXT-bw-8FS" id="ZDc-yU-rAm"/>
                     </connections>
                 </viewController>
                 <customObject id="Iap-6y-vxL" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <customObject id="mJK-XQ-9Mc" customClass="Serial" customModule="TI" customModuleProvider="target"/>
+                <userDefaultsController representsSharedInstance="YES" id="pax-9f-PSL"/>
             </objects>
             <point key="canvasLocation" x="2663" y="1037"/>
         </scene>
