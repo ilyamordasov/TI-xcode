@@ -45,7 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7991DBF4211B165600344529 /* ECG_DataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ECG_DataSet.swift; path = TI/DataSets/ECG_DataSet.swift; sourceTree = "<group>"; };
+		7991DBF4211B165600344529 /* ECG_DataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECG_DataSet.swift; sourceTree = "<group>"; };
 		79CC6172211B2D6A00FB4C5B /* ADS1298_Configs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADS1298_Configs.swift; sourceTree = "<group>"; };
 		89A6E2342114B272007687B8 /* TI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89A6E2372114B273007687B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -107,7 +107,6 @@
 		89A6E22B2114B272007687B8 = {
 			isa = PBXGroup;
 			children = (
-				7991DBF4211B165600344529 /* ECG_DataSet.swift */,
 				89A6E2362114B272007687B8 /* TI */,
 				89A6E2492114B276007687B8 /* TITests */,
 				89A6E2542114B276007687B8 /* TIUITests */,
@@ -130,6 +129,7 @@
 			children = (
 				89C20272211A521C00A23CA4 /* ORSSerial */,
 				89FD49C9211A4AC800AF122B /* TI-Bridging-Header.h */,
+				7991DBF4211B165600344529 /* ECG_DataSet.swift */,
 				89A6E2372114B273007687B8 /* AppDelegate.swift */,
 				89A6E2392114B273007687B8 /* ViewController.swift */,
 				89C20269211A516800A23CA4 /* ConfigController */,
