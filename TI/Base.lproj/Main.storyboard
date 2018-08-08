@@ -758,22 +758,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="1200" height="600"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J9m-Kf-QL9">
-                                <rect key="frame" x="590" y="557" width="120" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="Connect" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="rwT-V4-Cvt">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="connect:" target="mJK-XQ-9Mc" id="BEn-xy-TcU"/>
-                                    <binding destination="mJK-XQ-9Mc" name="enabled" keyPath="serialPort" id="206-tX-00D">
-                                        <dictionary key="options">
-                                            <string key="NSValueTransformerName">NSIsNotNil</string>
-                                        </dictionary>
-                                    </binding>
-                                </connections>
-                            </button>
                             <containerView canDrawConcurrently="YES" focusRingType="none" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c7M-VI-Mvq" customClass="PlotView" customModule="TI" customModuleProvider="target">
                                 <rect key="frame" x="10" y="10" width="1180" height="500"/>
                                 <autoresizingMask key="autoresizingMask"/>
@@ -820,27 +804,8 @@
                                     <binding destination="mJK-XQ-9Mc" name="selectedObject" keyPath="serialPort.baudRate" previousBinding="LCD-Ia-t3f" id="zy7-8n-aYF"/>
                                 </connections>
                             </popUpButton>
-                            <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LOe-O7-Kdg">
-                                <rect key="frame" x="382" y="560" width="52" height="26"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="54H-kJ-TBi" id="cDG-LH-sVL">
-                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="menu"/>
-                                    <menu key="menu" id="zax-ql-8jM">
-                                        <items>
-                                            <menuItem title="Item 1" state="on" id="54H-kJ-TBi"/>
-                                            <menuItem title="Item 2" id="w0w-LG-OPM"/>
-                                            <menuItem title="Item 3" id="WQs-0s-r2Y"/>
-                                        </items>
-                                    </menu>
-                                </popUpButtonCell>
-                                <connections>
-                                    <binding destination="mJK-XQ-9Mc" name="contentValues" keyPath="availableNumberOfDataBits" id="35A-zr-Y0y"/>
-                                    <binding destination="mJK-XQ-9Mc" name="selectedTag" keyPath="serialPort.numberOfDataBits" previousBinding="35A-zr-Y0y" id="d9E-um-n6N"/>
-                                </connections>
-                            </popUpButton>
                             <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A1U-Kz-5ha">
-                                <rect key="frame" x="445" y="560" width="72" height="26"/>
+                                <rect key="frame" x="384" y="561" width="72" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="kUz-bS-ZHv" id="rEq-YR-x0f">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
@@ -859,7 +824,7 @@
                                 </connections>
                             </popUpButton>
                             <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="URd-iw-ToV">
-                                <rect key="frame" x="527" y="560" width="52" height="26"/>
+                                <rect key="frame" x="465" y="560" width="52" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="Qs7-Fd-oxW" id="V2J-47-xcr">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
@@ -897,6 +862,22 @@
                                 </buttonCell>
                                 <connections>
                                     <action selector="scale_event:" target="hBu-3B-qnA" id="tDF-qb-L1S"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J9m-Kf-QL9">
+                                <rect key="frame" x="528" y="557" width="120" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Connect" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="rwT-V4-Cvt">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="connect:" target="mJK-XQ-9Mc" id="BEn-xy-TcU"/>
+                                    <binding destination="mJK-XQ-9Mc" name="enabled" keyPath="serialPort" id="206-tX-00D">
+                                        <dictionary key="options">
+                                            <string key="NSValueTransformerName">NSIsNotNil</string>
+                                        </dictionary>
+                                    </binding>
                                 </connections>
                             </button>
                         </subviews>
@@ -1339,7 +1320,7 @@
                                     </subviews>
                                 </clipView>
                                 <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="Zjs-Vi-Bni">
-                                    <rect key="frame" x="1" y="8" width="0.0" height="15"/>
+                                    <rect key="frame" x="1" y="7" width="0.0" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="zlz-We-hbi">

@@ -7,9 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14C2E8BD73C898D397F6856F /* Pods_TI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 442BC7D2FA365270EE526E2B /* Pods_TI.framework */; };
 		79CC6173211B2D6A00FB4C5B /* ADS1298_Configs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC6172211B2D6A00FB4C5B /* ADS1298_Configs.swift */; };
-		79CC6175211B2FC400FB4C5B /* DataSets in Resources */ = {isa = PBXBuildFile; fileRef = 79CC6174211B2FC400FB4C5B /* DataSets */; };
-		79D0A599211B2FFE00B2429F /* ECG_DataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D0A598211B2FFD00B2429F /* ECG_DataSet.swift */; };
 		89A6E2382114B273007687B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A6E2372114B273007687B8 /* AppDelegate.swift */; };
 		89A6E23A2114B273007687B8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A6E2392114B273007687B8 /* ViewController.swift */; };
 		89A6E23C2114B276007687B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89A6E23B2114B276007687B8 /* Assets.xcassets */; };
@@ -20,12 +19,9 @@
 		89C2026C211A516900A23CA4 /* PlotController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C20267211A516800A23CA4 /* PlotController.swift */; };
 		89C2026D211A516900A23CA4 /* PlotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C20268211A516800A23CA4 /* PlotView.swift */; };
 		89C2026E211A516900A23CA4 /* ConfigController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C2026A211A516800A23CA4 /* ConfigController.swift */; };
-		89C2027D211A521C00A23CA4 /* ORSSerialPacketDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 89C20273211A521C00A23CA4 /* ORSSerialPacketDescriptor.m */; };
-		89C2027E211A521C00A23CA4 /* ORSSerialBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 89C20275211A521C00A23CA4 /* ORSSerialBuffer.m */; };
-		89C2027F211A521C00A23CA4 /* ORSSerialRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 89C20276211A521C00A23CA4 /* ORSSerialRequest.m */; };
-		89C20280211A521C00A23CA4 /* ORSSerialPortManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 89C20277211A521C00A23CA4 /* ORSSerialPortManager.m */; };
-		89C20281211A521C00A23CA4 /* ORSSerialPort.m in Sources */ = {isa = PBXBuildFile; fileRef = 89C20278211A521C00A23CA4 /* ORSSerialPort.m */; };
 		89C20283211A5EC500A23CA4 /* Serial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C20282211A5EC500A23CA4 /* Serial.swift */; };
+		89C3728E211B5A1B00401060 /* ECG_DataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C3728D211B5A1B00401060 /* ECG_DataSet.swift */; };
+		89C37290211B5D3F00401060 /* ORSSerial.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89C3728F211B5D3F00401060 /* ORSSerial.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,9 +42,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		442BC7D2FA365270EE526E2B /* Pods_TI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6CE3C885F05C2E94433989B0 /* Pods-TI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TI.release.xcconfig"; path = "Pods/Target Support Files/Pods-TI/Pods-TI.release.xcconfig"; sourceTree = "<group>"; };
 		79CC6172211B2D6A00FB4C5B /* ADS1298_Configs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADS1298_Configs.swift; sourceTree = "<group>"; };
-		79CC6174211B2FC400FB4C5B /* DataSets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = DataSets; path = TI/DataSets; sourceTree = SOURCE_ROOT; };
-		79D0A598211B2FFD00B2429F /* ECG_DataSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ECG_DataSet.swift; sourceTree = "<group>"; };
 		89A6E2342114B272007687B8 /* TI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89A6E2372114B273007687B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89A6E2392114B273007687B8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -67,18 +63,11 @@
 		89C20267211A516800A23CA4 /* PlotController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlotController.swift; sourceTree = "<group>"; };
 		89C20268211A516800A23CA4 /* PlotView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlotView.swift; sourceTree = "<group>"; };
 		89C2026A211A516800A23CA4 /* ConfigController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigController.swift; sourceTree = "<group>"; };
-		89C20273211A521C00A23CA4 /* ORSSerialPacketDescriptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORSSerialPacketDescriptor.m; sourceTree = "<group>"; };
-		89C20274211A521C00A23CA4 /* ORSSerialPort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORSSerialPort.h; sourceTree = "<group>"; };
-		89C20275211A521C00A23CA4 /* ORSSerialBuffer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORSSerialBuffer.m; sourceTree = "<group>"; };
-		89C20276211A521C00A23CA4 /* ORSSerialRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORSSerialRequest.m; sourceTree = "<group>"; };
-		89C20277211A521C00A23CA4 /* ORSSerialPortManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORSSerialPortManager.m; sourceTree = "<group>"; };
-		89C20278211A521C00A23CA4 /* ORSSerialPort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORSSerialPort.m; sourceTree = "<group>"; };
-		89C20279211A521C00A23CA4 /* ORSSerialPacketDescriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORSSerialPacketDescriptor.h; sourceTree = "<group>"; };
-		89C2027A211A521C00A23CA4 /* ORSSerialBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORSSerialBuffer.h; sourceTree = "<group>"; };
-		89C2027B211A521C00A23CA4 /* ORSSerialRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORSSerialRequest.h; sourceTree = "<group>"; };
-		89C2027C211A521C00A23CA4 /* ORSSerialPortManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORSSerialPortManager.h; sourceTree = "<group>"; };
 		89C20282211A5EC500A23CA4 /* Serial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Serial.swift; sourceTree = "<group>"; };
+		89C3728D211B5A1B00401060 /* ECG_DataSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ECG_DataSet.swift; sourceTree = "<group>"; };
+		89C3728F211B5D3F00401060 /* ORSSerial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ORSSerial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		89FD49C9211A4AC800AF122B /* TI-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "TI-Bridging-Header.h"; path = "TI/TI-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		AE9DBB91F6EEA4CE42B8DDCF /* Pods-TI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TI.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TI/Pods-TI.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +75,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89C37290211B5D3F00401060 /* ORSSerial.framework in Frameworks */,
+				14C2E8BD73C898D397F6856F /* Pods_TI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,12 +97,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		79D0A597211B2FFD00B2429F /* DataSets */ = {
+		2817664FD4680565C37EA204 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				79D0A598211B2FFD00B2429F /* ECG_DataSet.swift */,
+				AE9DBB91F6EEA4CE42B8DDCF /* Pods-TI.debug.xcconfig */,
+				6CE3C885F05C2E94433989B0 /* Pods-TI.release.xcconfig */,
 			);
-			path = DataSets;
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		89A6E22B2114B272007687B8 = {
@@ -121,6 +113,8 @@
 				89A6E2492114B276007687B8 /* TITests */,
 				89A6E2542114B276007687B8 /* TIUITests */,
 				89A6E2352114B272007687B8 /* Products */,
+				2817664FD4680565C37EA204 /* Pods */,
+				C844AB12B8AF7209AF0625A3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -137,8 +131,7 @@
 		89A6E2362114B272007687B8 /* TI */ = {
 			isa = PBXGroup;
 			children = (
-				79D0A597211B2FFD00B2429F /* DataSets */,
-				89C20272211A521C00A23CA4 /* ORSSerial */,
+				89C3728C211B5A1B00401060 /* DataSets */,
 				89FD49C9211A4AC800AF122B /* TI-Bridging-Header.h */,
 				89A6E2372114B273007687B8 /* AppDelegate.swift */,
 				89A6E2392114B273007687B8 /* ViewController.swift */,
@@ -199,22 +192,21 @@
 			path = ConfigController;
 			sourceTree = "<group>";
 		};
-		89C20272211A521C00A23CA4 /* ORSSerial */ = {
+		89C3728C211B5A1B00401060 /* DataSets */ = {
 			isa = PBXGroup;
 			children = (
-				79CC6174211B2FC400FB4C5B /* DataSets */,
-				89C20273211A521C00A23CA4 /* ORSSerialPacketDescriptor.m */,
-				89C20274211A521C00A23CA4 /* ORSSerialPort.h */,
-				89C20275211A521C00A23CA4 /* ORSSerialBuffer.m */,
-				89C20276211A521C00A23CA4 /* ORSSerialRequest.m */,
-				89C20277211A521C00A23CA4 /* ORSSerialPortManager.m */,
-				89C20278211A521C00A23CA4 /* ORSSerialPort.m */,
-				89C20279211A521C00A23CA4 /* ORSSerialPacketDescriptor.h */,
-				89C2027A211A521C00A23CA4 /* ORSSerialBuffer.h */,
-				89C2027B211A521C00A23CA4 /* ORSSerialRequest.h */,
-				89C2027C211A521C00A23CA4 /* ORSSerialPortManager.h */,
+				89C3728D211B5A1B00401060 /* ECG_DataSet.swift */,
 			);
-			path = ORSSerial;
+			path = DataSets;
+			sourceTree = "<group>";
+		};
+		C844AB12B8AF7209AF0625A3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				89C3728F211B5D3F00401060 /* ORSSerial.framework */,
+				442BC7D2FA365270EE526E2B /* Pods_TI.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,9 +216,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 89A6E25A2114B276007687B8 /* Build configuration list for PBXNativeTarget "TI" */;
 			buildPhases = (
+				BD30E4BB7B039CFCD4CBBCBD /* [CP] Check Pods Manifest.lock */,
 				89A6E2302114B272007687B8 /* Sources */,
 				89A6E2312114B272007687B8 /* Frameworks */,
 				89A6E2322114B272007687B8 /* Resources */,
+				7F3E76C7F8ED230038C4EC13 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -322,7 +316,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79CC6175211B2FC400FB4C5B /* DataSets in Resources */,
 				89A6E23C2114B276007687B8 /* Assets.xcassets in Resources */,
 				89A6E23F2114B276007687B8 /* Main.storyboard in Resources */,
 			);
@@ -344,24 +337,58 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7F3E76C7F8ED230038C4EC13 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TI/Pods-TI-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ORSSerialPort/ORSSerial.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ORSSerial.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TI/Pods-TI-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BD30E4BB7B039CFCD4CBBCBD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TI-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		89A6E2302114B272007687B8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				89C2027F211A521C00A23CA4 /* ORSSerialRequest.m in Sources */,
 				89C2026B211A516900A23CA4 /* ITSwitch.m in Sources */,
 				89C2026E211A516900A23CA4 /* ConfigController.swift in Sources */,
-				89C2027E211A521C00A23CA4 /* ORSSerialBuffer.m in Sources */,
 				89C2026D211A516900A23CA4 /* PlotView.swift in Sources */,
 				89A6E23A2114B273007687B8 /* ViewController.swift in Sources */,
 				89C2026C211A516900A23CA4 /* PlotController.swift in Sources */,
+				89C3728E211B5A1B00401060 /* ECG_DataSet.swift in Sources */,
 				89C20283211A5EC500A23CA4 /* Serial.swift in Sources */,
-				89C20280211A521C00A23CA4 /* ORSSerialPortManager.m in Sources */,
 				79CC6173211B2D6A00FB4C5B /* ADS1298_Configs.swift in Sources */,
-				79D0A599211B2FFE00B2429F /* ECG_DataSet.swift in Sources */,
-				89C20281211A521C00A23CA4 /* ORSSerialPort.m in Sources */,
-				89C2027D211A521C00A23CA4 /* ORSSerialPacketDescriptor.m in Sources */,
 				89A6E2382114B273007687B8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -524,6 +551,7 @@
 		};
 		89A6E25B2114B276007687B8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE9DBB91F6EEA4CE42B8DDCF /* Pods-TI.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -545,6 +573,7 @@
 		};
 		89A6E25C2114B276007687B8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6CE3C885F05C2E94433989B0 /* Pods-TI.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import ORSSerial
 
 class Serial: NSObject, ORSSerialPortDelegate, NSUserNotificationCenterDelegate
 {
@@ -14,9 +15,8 @@ class Serial: NSObject, ORSSerialPortDelegate, NSUserNotificationCenterDelegate
     
     @objc let serialPortManager = ORSSerialPortManager.shared()
     @objc let availableBaudRates = [300, 1200, 2400, 4800, 9600, 14400, 19200, 28800, 38400, 57600, 115200, 230400]
-    @objc let availableNumberOfDataBits = [5, 6, 7, 8]
     @objc let availableParity = ["None", "Odd", "Even"]
-    @objc let availableNumberOfStopBits = [1, 1.5, 2]
+    @objc let availableNumberOfStopBits = [1, 2]
     @objc dynamic var shouldAddLineEnding = false
     
     @objc dynamic var serialPort: ORSSerialPort?
@@ -32,6 +32,9 @@ class Serial: NSObject, ORSSerialPortDelegate, NSUserNotificationCenterDelegate
     override init()
     {
         super.init()
+        
+        self.serialPort?.baudRate = 115200
+        self.serialPort?.numberOfStopBits = 1
         
         let nc = NotificationCenter.default
         nc.addObserver(self, selector: #selector(serialPortsWereConnected(_:)), name: NSNotification.Name.ORSSerialPortsWereConnected, object: nil)
@@ -81,12 +84,12 @@ class Serial: NSObject, ORSSerialPortDelegate, NSUserNotificationCenterDelegate
     
     func serialPort(_ serialPort: ORSSerialPort, didReceive data: Data) {
         if let string = NSString(data: data, encoding: String.Encoding.utf8.rawValue) {
-            print(string)
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "newUARTDataIsReady"), object: nil, userInfo: ["data": Int(string as String) ?? 0])
+            let num = Int(Float((string.components(separatedBy: "\r\n")[5]).components(separatedBy: "\t\t")[1])!)
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "newUARTDataIsReady"), object: nil, userInfo: ["data": num ])
         }
     }
     
-    func serialPortWasRemovedFromSystem(_ serialPort: ORSSerialPort) {
+    func serialPortWasRemoved(fromSystem serialPort: ORSSerialPort) {
         self.serialPort = nil
         self.openCloseButton.title = "Connect"
     }
