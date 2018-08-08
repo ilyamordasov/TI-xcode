@@ -26,29 +26,13 @@ class PlotController: NSViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
-//        for port in serialPortManager.availablePorts
-//        {
-//            ports.addItem(withObjectValue: port.path)
-//            if (port.path == "/dev/cu.SLAB_USBtoUART")
-//            {
-//                ports.stringValue = port.path
-//                self.serialPort = port
-//                self.serialPort?.baudRate = 115200
-//                self.serialPort?.numberOfStopBits = 1
-//                self.serialPort?.parity = ORSSerialPortParity.none
-//                self.serialPort?.numberOfDataBits = 8
-//                self.serialPort?.usesDTRDSRFlowControl = false
-//                self.serialPort?.usesRTSCTSFlowControl = false
-//                self.serialPort?.usesDCDOutputFlowControl = false
-//            }
-//        }
         // Do view setup here.
-       // Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(runTimeCode), userInfo: nil, repeats: true)
+       Timer.scheduledTimer(timeInterval: 0.0001, target: self, selector: #selector(runTimeCode), userInfo: nil, repeats: true)
     }
     
     @objc func runTimeCode()
     {
-        let res = Int(randomNumber(inRange: 0...100))
+        let res = Int(randomNumber(inRange: -100...100))
         
         plot.add(point: res)
         plot.display()
@@ -59,28 +43,4 @@ class PlotController: NSViewController
         let value = Int64(arc4random()) % length + Int64(range.lowerBound)
         return T(value)
     }
-    
-//    @IBAction func connect_event(_ sender: NSButton)
-//    {
-//        //print(self.serial)
-////        if let port = self.serial.getSerial()
-////        {
-////            if (port.isOpen)
-////            {
-////                port.close()
-////            }
-////            else
-////            {
-////                port.open()
-////                print(" \(port.baudRate) \(port.name)")
-////                print("Serial port \(port) opened successfully.")
-////                sender.title = (sender.title == "Connect") ? "Disconnect" : "Connect";
-////                ports.isEnabled = (sender.title == "Connect");
-////                baud.isEnabled = (sender.title == "Connect");
-////                databits.isEnabled = (sender.title == "Connect");
-////                parity.isEnabled = (sender.title == "Connect");
-////                stopbits.isEnabled = (sender.title == "Connect");
-////            }
-////        }
-//    }
 }

@@ -11,21 +11,30 @@ import Cocoa
 class PlotView: NSView {
 
     var context:CGContext? = nil
-    var data:[CGPoint] = []
-    var _dirtyRect:NSRect!
-    var x:Int = 0;
+    var data:[Int] = []
+    let offset:Int = 50;
+    var min:Int = 0
+    var max:Int = 0
     
     override func draw(_ dirtyRect: NSRect) {
+        //self.subviews.map({ $0.removeFromSuperview() })
+        self.subviews.forEach({ $0.removeFromSuperview() })
         self.context = (NSGraphicsContext.current?.cgContext)!;
-        _dirtyRect = dirtyRect
         super.draw(dirtyRect)
         drawBackground(rect: dirtyRect)
         drawHorizontalSegments(rect: dirtyRect)
         drawVerticalSegments(rect: dirtyRect)
         drawIsolines(rect: dirtyRect)
-        for i in self.data
+        drawVerticalLabels(rect:dirtyRect)
+        if self.data.count > 1
         {
-            drawBezier(point: i)
+            self.min = self.data.min()!
+            self.max = self.data.max()!
+            
+            for i in 0...self.data.count-1
+            {
+                drawBezier(index: i)
+            }
         }
     }
     
@@ -33,7 +42,6 @@ class PlotView: NSView {
     {
         
         self.context?.move(to: CGPoint(x:0,y:0))
-        //context!.setStrokeColor(NSColor.black.cgColor)
         self.context?.setFillColor(NSColor.white.cgColor)
         self.context?.addRect(CGRect(x: 0, y: 0, width: rect.width, height: rect.height))
         //
@@ -72,29 +80,68 @@ class PlotView: NSView {
         }
     }
     
+    func drawVerticalLabels(rect: NSRect)
+    {
+        let diff:Int = self.max - self.min
+        for i in 0...1
+        {
+            var y:Int = 0
+            var text:String = ""
+            if i == 0
+            {
+                y = Int(self.frame.height/2) + Int(0 - Int(self.frame.height)/2 + offset)
+                text = "\(min)"
+            }
+            else
+            {
+                y = Int(self.frame.height/2) + Int(self.frame.height)/2 - offset
+                text = "\(max)"
+            }
+            self.context?.move(to: CGPoint(x:0,y:y))
+            self.context?.setStrokeColor(CGColor.black)
+            self.context?.addLine(to: CGPoint(x: 10, y: y))
+            self.context?.setLineWidth(0.5)
+            self.context?.drawPath(using: .fillStroke)
+            
+            let label:NSTextField = NSTextField(frame: NSMakeRect(15, CGFloat(y)-12, 30, 20))
+            label.stringValue = text
+            label.font = NSFont(name: "Lucida Sans", size: 8.0)
+            label.isEditable = false
+            label.isBordered = false
+            label.backgroundColor = .clear
+            label.autoresizesSubviews = true
+            self.addSubview(label)
+        }
+    }
+    
     public func add(point: Int)
     {
-        self.data.append(CGPoint(x: x, y: Int(_dirtyRect.height/2) + point))
-        x += 1
-        if (x >= Int(_dirtyRect.width))
+        if (data.count >= Int(self.frame.width) - offset)
         {
-            x = 0
-            self.context?.move(to: CGPoint(x:0, y:0))
+            data.remove(at: 0)
         }
+        self.data.append(point)
     }
     
     public func removeData()
     {
         self.data = []
-        //self.data.removeAll()
     }
     
-    public func drawBezier(point: CGPoint)
+    public func drawBezier(index: Int)
     {
+        let y: Int = map(x: self.data[index], in_min: min, in_max: max, out_min: 0 - Int(self.frame.height/2) + offset, out_max: Int(self.frame.height/2) - offset)
+        let scaledY:Int = Int(self.frame.height/2) + y
+        
         self.context?.setStrokeColor(NSColor.blue.cgColor)
         self.context?.setLineWidth(1.0)
-        self.context?.addLine(to: point)
+        self.context?.addLine(to: CGPoint(x: index, y: scaledY))
         self.context?.drawPath(using: .fillStroke)
-        self.context?.move(to: point)
+        self.context?.move(to: CGPoint(x: index, y: scaledY))
+    }
+    
+    func map(x: Int, in_min: Int, in_max:Int, out_min: Int, out_max: Int) -> Int
+    {
+        return Int((x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min);
     }
 }
