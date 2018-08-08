@@ -15,6 +15,7 @@ class PlotView: NSView {
     let offset:Int = 50;
     var min:Int = 0
     var max:Int = 0
+    var isScaled:Bool = true;
     
     override func draw(_ dirtyRect: NSRect)
     {
@@ -85,35 +86,37 @@ class PlotView: NSView {
     
     func drawVerticalLabels(rect: NSRect)
     {
-        let diff:Int = self.max - self.min
-        for i in 0...1
+        if isScaled
         {
-            var y:Int = 0
-            var text:String = ""
-            if i == 0
+            for i in 0...1
             {
-                y = Int(self.frame.height/2) + Int(0 - Int(self.frame.height)/2 + offset)
-                text = "\(min)"
+                var y:Int = 0
+                var text:String = ""
+                if i == 0
+                {
+                    y = Int(self.frame.height/2) + Int(0 - Int(self.frame.height)/2 + offset)
+                    text = "\(min)"
+                }
+                else
+                {
+                    y = Int(self.frame.height/2) + Int(self.frame.height)/2 - offset
+                    text = "\(max)"
+                }
+                self.context?.move(to: CGPoint(x:0,y:y))
+                self.context?.setStrokeColor(CGColor.black)
+                self.context?.addLine(to: CGPoint(x: 10, y: y))
+                self.context?.setLineWidth(0.5)
+                self.context?.drawPath(using: .fillStroke)
+                
+                let label:NSTextField = NSTextField(frame: NSMakeRect(15, CGFloat(y)-12, 30, 20))
+                label.stringValue = text
+                label.font = NSFont(name: "Lucida Sans", size: 8.0)
+                label.isEditable = false
+                label.isBordered = false
+                label.backgroundColor = .clear
+                label.autoresizesSubviews = true
+                self.addSubview(label)
             }
-            else
-            {
-                y = Int(self.frame.height/2) + Int(self.frame.height)/2 - offset
-                text = "\(max)"
-            }
-            self.context?.move(to: CGPoint(x:0,y:y))
-            self.context?.setStrokeColor(CGColor.black)
-            self.context?.addLine(to: CGPoint(x: 10, y: y))
-            self.context?.setLineWidth(0.5)
-            self.context?.drawPath(using: .fillStroke)
-            
-            let label:NSTextField = NSTextField(frame: NSMakeRect(15, CGFloat(y)-12, 30, 20))
-            label.stringValue = text
-            label.font = NSFont(name: "Lucida Sans", size: 8.0)
-            label.isEditable = false
-            label.isBordered = false
-            label.backgroundColor = .clear
-            label.autoresizesSubviews = true
-            self.addSubview(label)
         }
     }
     
@@ -131,10 +134,25 @@ class PlotView: NSView {
         self.data = []
     }
     
+    public func scaled(value:Bool)
+    {
+        self.isScaled = value
+    }
+    
     public func drawBezier(index: Int)
     {
-        let y_old:Int = (index == 0) ? 0 : map(x: self.data[index-1], in_min: min, in_max: max, out_min: 0 - Int(self.frame.height/2) + offset, out_max: Int(self.frame.height/2) - offset)
-        let y: Int = map(x: self.data[index], in_min: min, in_max: max, out_min: 0 - Int(self.frame.height/2) + offset, out_max: Int(self.frame.height/2) - offset)
+        var y_old:Int = 0
+        var y:Int = 0
+        if isScaled
+        {
+            y_old = (index == 0) ? 0 : map(x: self.data[index-1], in_min: min, in_max: max, out_min: 0 - Int(self.frame.height/2) + offset, out_max: Int(self.frame.height/2) - offset)
+            y = map(x: self.data[index], in_min: min, in_max: max, out_min: 0 - Int(self.frame.height/2) + offset, out_max: Int(self.frame.height/2) - offset)
+        }
+        else
+        {
+            y_old = (index == 0) ? 0 : map(x: self.data[index-1], in_min: min, in_max: max, out_min: 0 - Int(max/2) + offset, out_max: Int(max/2) - offset)
+            y = map(x: self.data[index], in_min: min, in_max: max, out_min: 0 - Int(max/2) + offset, out_max: Int(max/2) - offset)
+        }
         
         let scaledY_old:Int = Int(self.frame.height/2) + y_old
         let scaledY:Int = Int(self.frame.height/2) + y

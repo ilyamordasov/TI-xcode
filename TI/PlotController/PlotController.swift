@@ -36,6 +36,12 @@ class PlotController: NSViewController, NSUserNotificationCenterDelegate
         }
     }
     
+    
+    @IBAction func scale_event(_ sender: NSButton)
+    {
+        plot.scaled(value: (sender.state.rawValue == 1) ? true : false)
+    }
+    
     @IBAction func testECG_event(_ sender: NSButton)
     {
         if sender.title == "Test ECG"

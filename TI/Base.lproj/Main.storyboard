@@ -888,6 +888,17 @@
                                     <action selector="testECG_event:" target="hBu-3B-qnA" id="sve-mT-TRf"/>
                                 </connections>
                             </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ljq-MC-jb7">
+                                <rect key="frame" x="1070" y="50" width="106" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="check" title="Need to scale" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="q04-ak-KBz">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="scale_event:" target="hBu-3B-qnA" id="tDF-qb-L1S"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </view>
                     <connections>

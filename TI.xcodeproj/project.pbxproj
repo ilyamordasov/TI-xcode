@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7991DBF5211B165600344529 /* ECG_DataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7991DBF4211B165600344529 /* ECG_DataSet.swift */; };
+		79CC6173211B2D6A00FB4C5B /* ADS1298_Configs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC6172211B2D6A00FB4C5B /* ADS1298_Configs.swift */; };
 		89A6E2382114B273007687B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A6E2372114B273007687B8 /* AppDelegate.swift */; };
 		89A6E23A2114B273007687B8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A6E2392114B273007687B8 /* ViewController.swift */; };
 		89A6E23C2114B276007687B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89A6E23B2114B276007687B8 /* Assets.xcassets */; };
@@ -45,6 +46,7 @@
 
 /* Begin PBXFileReference section */
 		7991DBF4211B165600344529 /* ECG_DataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ECG_DataSet.swift; path = TI/DataSets/ECG_DataSet.swift; sourceTree = "<group>"; };
+		79CC6172211B2D6A00FB4C5B /* ADS1298_Configs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADS1298_Configs.swift; sourceTree = "<group>"; };
 		89A6E2342114B272007687B8 /* TI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89A6E2372114B273007687B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89A6E2392114B273007687B8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				89C2026A211A516800A23CA4 /* ConfigController.swift */,
+				79CC6172211B2D6A00FB4C5B /* ADS1298_Configs.swift */,
 			);
 			path = ConfigController;
 			sourceTree = "<group>";
@@ -344,6 +347,7 @@
 				89C20283211A5EC500A23CA4 /* Serial.swift in Sources */,
 				89C20280211A521C00A23CA4 /* ORSSerialPortManager.m in Sources */,
 				7991DBF5211B165600344529 /* ECG_DataSet.swift in Sources */,
+				79CC6173211B2D6A00FB4C5B /* ADS1298_Configs.swift in Sources */,
 				89C20281211A521C00A23CA4 /* ORSSerialPort.m in Sources */,
 				89C2027D211A521C00A23CA4 /* ORSSerialPacketDescriptor.m in Sources */,
 				89A6E2382114B273007687B8 /* AppDelegate.swift in Sources */,
