@@ -884,7 +884,11 @@
                     </connections>
                 </viewController>
                 <customObject id="Iap-6y-vxL" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-                <customObject id="mJK-XQ-9Mc" customClass="Serial" customModule="TI" customModuleProvider="target"/>
+                <customObject id="mJK-XQ-9Mc" customClass="Serial" customModule="TI" customModuleProvider="target">
+                    <connections>
+                        <outlet property="openCloseButton" destination="J9m-Kf-QL9" id="mUG-ik-oGi"/>
+                    </connections>
+                </customObject>
                 <userDefaultsController representsSharedInstance="YES" id="pax-9f-PSL"/>
             </objects>
             <point key="canvasLocation" x="2663" y="1037"/>

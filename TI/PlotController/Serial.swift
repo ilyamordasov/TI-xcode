@@ -10,6 +10,8 @@ import Cocoa
 
 class Serial: NSObject, ORSSerialPortDelegate, NSUserNotificationCenterDelegate
 {
+    @IBOutlet weak var openCloseButton: NSButton!
+    
     @objc let serialPortManager = ORSSerialPortManager.shared()
     @objc let availableBaudRates = [300, 1200, 2400, 4800, 9600, 14400, 19200, 28800, 38400, 57600, 115200, 230400]
     @objc let availableNumberOfDataBits = [5, 6, 7, 8]
@@ -69,11 +71,11 @@ class Serial: NSObject, ORSSerialPortDelegate, NSUserNotificationCenterDelegate
     // MARK: - ORSSerialPortDelegate
     
     func serialPortWasOpened(_ serialPort: ORSSerialPort) {
-        //self.openCloseButton.title = "Close"
+        self.openCloseButton.title = "Disconnect"
     }
     
     func serialPortWasClosed(_ serialPort: ORSSerialPort) {
-        //self.openCloseButton.title = "Open"
+        self.openCloseButton.title = "Connect"
     }
     
     func serialPort(_ serialPort: ORSSerialPort, didReceive data: Data) {
@@ -85,7 +87,7 @@ class Serial: NSObject, ORSSerialPortDelegate, NSUserNotificationCenterDelegate
     
     func serialPortWasRemovedFromSystem(_ serialPort: ORSSerialPort) {
         self.serialPort = nil
-        //self.openCloseButton.title = "Open"
+        self.openCloseButton.title = "Connect"
     }
     
     func serialPort(_ serialPort: ORSSerialPort, didEncounterError error: Error) {
