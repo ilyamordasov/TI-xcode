@@ -11,7 +11,7 @@ import IOKit
 import IOKit.serial
 import Foundation
 
-class PlotController: NSViewController
+class PlotController: NSViewController, NSUserNotificationCenterDelegate
 {
     @IBOutlet weak var plot: PlotView!
     
@@ -19,20 +19,26 @@ class PlotController: NSViewController
     {
         super.viewDidLoad()
         // Do view setup here.
-       Timer.scheduledTimer(timeInterval: 0.0001, target: self, selector: #selector(runTimeCode), userInfo: nil, repeats: true)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.newUARTDataIsReady), name: NSNotification.Name(rawValue: "newUARTDataIsReady"), object: nil)
+
+       //Timer.scheduledTimer(timeInterval: 0.0001, target: self, selector: #selector(runTimeCode), userInfo: nil, repeats: true)
+    }
+    
+    @objc func newUARTDataIsReady(notif: NSNotification)
+    {
+        //Insert code here
+        if let data = notif.userInfo!["data"] as? NSNumber
+        {
+            plot.add(point: Int(truncating: data))
+            plot.display()
+        }
     }
     
     @objc func runTimeCode()
     {
-        let res = Int(randomNumber(inRange: -100...100))
         
-        plot.add(point: res)
-        plot.display()
-    }
-    
-    func randomNumber<T : SignedInteger>(inRange range: ClosedRange<T> = 1...6) -> T {
-        let length = Int64(range.upperBound - range.lowerBound + 1)
-        let value = Int64(arc4random()) % length + Int64(range.lowerBound)
-        return T(value)
+        
+        //plot.add(point: res)
+        //plot.display()
     }
 }

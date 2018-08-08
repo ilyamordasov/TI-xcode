@@ -46,6 +46,12 @@ class Serial: NSObject, ORSSerialPortDelegate, NSUserNotificationCenterDelegate
         NotificationCenter.default.removeObserver(self)
     }
     
+    func randomNumber<T : SignedInteger>(inRange range: ClosedRange<T> = 1...6) -> T {
+        let length = Int64(range.upperBound - range.lowerBound + 1)
+        let value = Int64(arc4random()) % length + Int64(range.lowerBound)
+        return T(value)
+    }
+    
     @IBAction func connect(_ sender: NSButton)
     {
         if let port = self.serialPort
@@ -63,11 +69,6 @@ class Serial: NSObject, ORSSerialPortDelegate, NSUserNotificationCenterDelegate
         }
     }
     
-    public func getSerial() -> ORSSerialPort
-    {
-        return self.serialPort!
-    }
-    
     // MARK: - ORSSerialPortDelegate
     
     func serialPortWasOpened(_ serialPort: ORSSerialPort) {
@@ -81,7 +82,7 @@ class Serial: NSObject, ORSSerialPortDelegate, NSUserNotificationCenterDelegate
     func serialPort(_ serialPort: ORSSerialPort, didReceive data: Data) {
         if let string = NSString(data: data, encoding: String.Encoding.utf8.rawValue) {
             print(string)
-            //self.receivedDataTextView.needsDisplay = true
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "newUARTDataIsReady"), object: nil, userInfo: ["data": Int(string as String) ?? 0])
         }
     }
     
