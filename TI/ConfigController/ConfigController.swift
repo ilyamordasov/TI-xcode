@@ -11,6 +11,17 @@ import Cocoa
 class ConfigController: NSViewController {
     
     @IBOutlet weak var tableView: NSTableView!
+    @IBOutlet weak var uart: NSTextField!
+    
+    
+    @IBAction func uartSend(_ sender: NSButton)
+    {
+        if (self.uart.stringValue.count > 0)
+        {
+            self.uart.stringValue += "\r\n"
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "sendUART"), object: nil, userInfo: ["data": self.uart.stringValue ])
+        }
+    }
     
     let configs = ADS1298_Configs()
     var packNumber:Int = 0
@@ -64,6 +75,9 @@ class ConfigController: NSViewController {
             }
         }
         data.append(UInt8(0x66))
+//        data.append(UInt8(0x00))
+        data.append(UInt8(13))
+        data.append(UInt8(10))
         let packet:NSData = NSData(bytes: data, length: data.count)
         self.packNumber += 1
         if self.packNumber == 256

@@ -40,6 +40,7 @@ class Serial: NSObject, ORSSerialPortDelegate, NSUserNotificationCenterDelegate
         nc.addObserver(self, selector: #selector(serialPortsWereConnected(_:)), name: NSNotification.Name.ORSSerialPortsWereConnected, object: nil)
         nc.addObserver(self, selector: #selector(serialPortsWereDisconnected(_:)), name: NSNotification.Name.ORSSerialPortsWereDisconnected, object: nil)
         nc.addObserver(self, selector: #selector(self.newUARTDataToSend), name: NSNotification.Name(rawValue: "newUARTDataToSend"), object: nil)
+        nc.addObserver(self, selector: #selector(self.sendUART), name: NSNotification.Name(rawValue: "sendUART"), object: nil)
         
         NSUserNotificationCenter.default.delegate = self
         print(serialPortManager.availablePorts)
@@ -58,6 +59,7 @@ class Serial: NSObject, ORSSerialPortDelegate, NSUserNotificationCenterDelegate
     
     @IBAction func connect(_ sender: NSButton)
     {
+        self.serialPort!.usesRTSCTSFlowControl = true
         if let port = self.serialPort
         {
             if (port.isOpen)
@@ -85,8 +87,9 @@ class Serial: NSObject, ORSSerialPortDelegate, NSUserNotificationCenterDelegate
     
     func serialPort(_ serialPort: ORSSerialPort, didReceive data: Data) {
         if let string = NSString(data: data, encoding: String.Encoding.utf8.rawValue) {
-            let num = Int(Float((string.components(separatedBy: "\r\n")[5]).components(separatedBy: "\t\t")[1])!)
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "newUARTDataIsReady"), object: nil, userInfo: ["data": num ])
+            //let num = Int(Float((string.components(separatedBy: "\r\n")[5]).components(separatedBy: "\t\t")[1])!)
+            //NotificationCenter.default.post(name: NSNotification.Name(rawValue: "newUARTDataIsReady"), object: nil, userInfo: ["data": num ])
+            print(string)
         }
     }
     
@@ -100,6 +103,26 @@ class Serial: NSObject, ORSSerialPortDelegate, NSUserNotificationCenterDelegate
     }
     
     // MARK: - NSUserNotifcationCenterDelegate
+    
+    @objc func sendUART(notif: NSNotification)
+    {
+        if let data = notif.userInfo!["data"] as? String
+        {
+            print(data)
+            if self.serialPort == nil
+            {
+                self.serialPort = ORSSerialPort(path: "/dev/cu.SLAB_USBtoUART")
+                self.serialPort!.baudRate = 115200
+                self.serialPort!.numberOfStopBits = 1
+                self.serialPort!.parity = ORSSerialPortParity.none
+            }
+            if !self.serialPort!.isOpen
+            {
+                self.serialPort!.open()
+            }
+            self.serialPort?.send(data.data(using: String.Encoding.utf8)!)
+        }
+    }
     
     @objc func newUARTDataToSend(notif: NSNotification)
     {
