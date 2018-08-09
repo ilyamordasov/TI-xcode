@@ -7,5 +7,6 @@ target 'TI' do
 
   # Pods for TI
   pod "ORSSerialPort"
+  pod "Charts"
 
 end

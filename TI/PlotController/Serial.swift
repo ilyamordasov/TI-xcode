@@ -39,6 +39,7 @@ class Serial: NSObject, ORSSerialPortDelegate, NSUserNotificationCenterDelegate
         let nc = NotificationCenter.default
         nc.addObserver(self, selector: #selector(serialPortsWereConnected(_:)), name: NSNotification.Name.ORSSerialPortsWereConnected, object: nil)
         nc.addObserver(self, selector: #selector(serialPortsWereDisconnected(_:)), name: NSNotification.Name.ORSSerialPortsWereDisconnected, object: nil)
+        nc.addObserver(self, selector: #selector(self.newUARTDataToSend), name: NSNotification.Name(rawValue: "newUARTDataToSend"), object: nil)
         
         NSUserNotificationCenter.default.delegate = self
         print(serialPortManager.availablePorts)
@@ -99,6 +100,26 @@ class Serial: NSObject, ORSSerialPortDelegate, NSUserNotificationCenterDelegate
     }
     
     // MARK: - NSUserNotifcationCenterDelegate
+    
+    @objc func newUARTDataToSend(notif: NSNotification)
+    {
+        if let data = notif.userInfo!["data"] as? NSData
+        {
+            print(data)
+            if self.serialPort == nil
+            {
+                self.serialPort = ORSSerialPort(path: "/dev/cu.SLAB_USBtoUART")
+                self.serialPort!.baudRate = 115200
+                self.serialPort!.numberOfStopBits = 1
+                self.serialPort!.parity = ORSSerialPortParity.none
+            }
+            if !self.serialPort!.isOpen
+            {
+                 self.serialPort!.open()
+            }
+            self.serialPort!.send(data as Data)
+        }
+    }
     
     func userNotificationCenter(_ center: NSUserNotificationCenter, didDeliver notification: NSUserNotification) {
         let popTime = DispatchTime.now() + Double(Int64(3.0 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)

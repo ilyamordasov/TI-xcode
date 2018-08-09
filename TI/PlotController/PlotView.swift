@@ -9,7 +9,7 @@
 import Cocoa
 
 class PlotView: NSView {
-
+    
     var context:CGContext? = nil
     var data:[Int] = []
     let offset:Int = 50;

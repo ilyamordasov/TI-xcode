@@ -32,7 +32,7 @@ class PlotController: NSViewController, NSUserNotificationCenterDelegate
         if let data = notif.userInfo!["data"] as? NSNumber
         {
             plot.add(point: Int(truncating: data))
-            plot.display()
+            //plot.display()
         }
     }
     

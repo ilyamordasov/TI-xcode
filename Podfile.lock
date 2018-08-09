@@ -1,16 +1,22 @@
 PODS:
+  - Charts (3.1.1):
+    - Charts/Core (= 3.1.1)
+  - Charts/Core (3.1.1)
   - ORSSerialPort (2.0.2)
 
 DEPENDENCIES:
+  - Charts
   - ORSSerialPort
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
+    - Charts
     - ORSSerialPort
 
 SPEC CHECKSUMS:
+  Charts: 90a4d61da0f6e06684c591e3bcab11940fe61736
   ORSSerialPort: 3fb0d2404b7e8b99c4f1aa7e7314d63030cd54c3
 
-PODFILE CHECKSUM: b0c6b81113f39314adc855085a1afdf90d94b08d
+PODFILE CHECKSUM: 461806d670e4df0285d7a2dcc154a90b9a389a08
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.5.3
