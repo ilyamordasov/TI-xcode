@@ -11,17 +11,6 @@ import Cocoa
 class ConfigController: NSViewController {
     
     @IBOutlet weak var tableView: NSTableView!
-    @IBOutlet weak var uart: NSTextField!
-    
-    
-    @IBAction func uartSend(_ sender: NSButton)
-    {
-        if (self.uart.stringValue.count > 0)
-        {
-            self.uart.stringValue += "\r\n"
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "sendUART"), object: nil, userInfo: ["data": self.uart.stringValue ])
-        }
-    }
     
     let configs = ADS1298_Configs()
     var packNumber:Int = 0
