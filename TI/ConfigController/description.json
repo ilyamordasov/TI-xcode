@@ -1,0 +1,977 @@
+{
+  "DR": [
+    [
+        {
+          "value": 0,
+          "text": "HR Mode: 32 kSPS"
+        },
+        {
+          "value": 1,
+          "text": "HR Mode: 16 kSPS"
+        },
+        {
+          "value": 2,
+          "text": "HR Mode: 8 kSPS"
+        },
+        {
+          "value": 3,
+          "text": "HR Mode: 4 kSPS"
+        },
+        {
+          "value": 4,
+          "text": "HR Mode: 2 kSPS"
+        },
+        {
+          "value": 5,
+          "text": "HR Mode: 1 kSPS"
+        },
+        {
+          "value": 6,
+          "text": "HR Mode: 500 SPS"
+        }
+    ],
+    [
+        {
+          "value": 0,
+          "text": "HR Mode: 16 kSPS"
+        },
+        {
+          "value": 1,
+          "text": "HR Mode: 8 kSPS"
+        },
+        {
+          "value": 2,
+          "text": "HR Mode: 4 kSPS"
+        },
+        {
+          "value": 3,
+          "text": "HR Mode: 2 kSPS"
+        },
+        {
+          "value": 4,
+          "text": "HR Mode: 1 kSPS"
+        },
+        {
+          "value": 5,
+          "text": "HR Mode: 500 SPS"
+        },
+        {
+          "value": 6,
+          "text": "HR Mode: 250 SPS"
+        }
+    ],
+    {
+      "text": "Reserved (do not use)"
+    }
+  ],
+  "DAISY_EN": [
+    {
+      "value": 0,
+      "text": "LP mode"
+    },
+    {
+      "value": 64,
+      "text": "HR mode"
+    }
+    ],
+  "CLK_EN": [
+    {
+      "value": 0,
+      "text": "Oscillator clock output disabled"
+    },
+    {
+      "value": 32,
+      "text": "Oscillator clock output enabled"
+    }
+    ],
+  "WCT_CHOP": [
+    {
+      "value": 0,
+      "text": "Chopping frequency varies, see Table 7"
+    },
+    {
+      "value": 32,
+      "text": "Chopping frequency constant at fMOD / 16"
+    }
+  ],
+  "INT_TEST": [
+    {
+      "value": 0,
+      "text": "Test signals are driven externally"
+    },
+    {
+      "value": 16,
+      "text": "Test signals are generated internally"
+    }
+  ],
+  "TEST_AMP": [
+    {
+      "value": 0,
+      "text": "1 × –(VREFP – VREFN) / 2400 V"
+    },
+    {
+      "value": 4,
+      "text": "2 × –(VREFP – VREFN) / 2400 V"
+    }
+  ],
+  "TEST_FREQ": [
+    {
+      "value": 0,
+      "text": "Pulsed at fCLK / 2^21"
+    },
+    {
+      "value": 1,
+      "text": "Pulsed at fCLK / 2^20"
+    },
+    {
+      "value": 2,
+      "text": "Not used"
+    },
+    {
+      "value": 3,
+      "text": "At dc"
+    }
+  ],
+  "PD_REFBUF": [
+    {
+      "value": 0,
+      "text": "Power-down internal reference buffer"
+    },
+    {
+      "value": 128,
+      "text": "Enable internal reference buffer"
+    }
+  ],
+  "VREF_4V": [
+    {
+      "value": 0,
+      "text": "VREFP is set to 2.4 V"
+    },
+    {
+      "value": 32,
+      "text": "VREFP is set to 4 V (use only with a 5-V analog supply)"
+    }
+  ],
+  "RLD_MEAS": [
+    {
+      "value": 0,
+      "text": "Open"
+    },
+    {
+      "value": 16,
+      "text": "RLD_IN signal is routed to the channel that has the MUX_Setting 010 (VREF)"
+    }
+  ],
+  "RLDREF_INT": [
+    {
+      "value": 0,
+      "text": "RLDREF signal fed externally"
+    },
+    {
+      "value": 8,
+      "text": "RLDREF signal (AVDD – AVSS) / 2 generated internally"
+    }
+  ],
+  "PD_RLD": [
+    {
+      "value": 0,
+      "text": "RLD buffer is powered down"
+    },
+    {
+      "value": 4,
+      "text": "RLD buffer is enabled"
+    }
+  ],
+  "RLD_LOFF_SENS": [
+    {
+      "value": 0,
+      "text": "RLD sense is disabled"
+    },
+    {
+      "value": 2,
+      "text": "RLD sense is enabled"
+    }
+  ],
+  "RLD_STAT": [
+    {
+      "value": 0,
+      "text": "RLD is connected"
+    },
+    {
+      "value": 1,
+      "text": "RLD is not connected"
+    }
+  ],
+  "COMP_TH": [
+    {
+      "value": 0,
+      "text": "Comparator positive/negative side - 95% / 5%"
+    },
+    {
+      "value": 32,
+      "text": "Comparator positive/negative side - 92.5% / 7.5%"
+    },
+    {
+      "value": 64,
+      "text": "Comparator positive/negative side - 90% / 10%"
+    },
+    {
+      "value": 96,
+      "text": "Comparator positive/negative side - 87.5% / 12.5%"
+    },
+    {
+      "value": 128,
+      "text": "Comparator positive/negative side - 85% / 15%"
+    },
+    {
+      "value": 160,
+      "text": "Comparator positive/negative side - 80% / 20%"
+    },
+    {
+      "value": 192,
+      "text": "Comparator positive/negative side - 75% / 25%"
+    },
+    {
+      "value": 224,
+      "text": "Comparator positive/negative side - 70% / 30%"
+    }
+  ],
+  "VLEAD_OFF_EN": [
+    {
+      "value": 0,
+      "text": "Current source mode lead-off"
+    },
+    {
+      "value": 16,
+      "text": "pullup or pulldown resistor mode lead-off"
+    }
+  ],
+  "ILEAD_OFF": [
+    {
+      "value": 0,
+      "text": "6 nA"
+    },
+    {
+      "value": 4,
+      "text": "12 nA"
+    },
+    {
+      "value": 8,
+      "text": "18 nA"
+    },
+    {
+      "value": 12,
+      "text": "24 nA"
+    }
+  ],
+  "FLEAD_OFF": [
+    {
+      "value": 0,
+      "text": "When any bits of the LOFF_SENSP or LOFF_SENSN registers are turned on, make sure that FLEAD[1:0] are either set to 01 or 11"
+    },
+    {
+      "value": 1,
+      "text": "AC lead-off detection at fDR / 4"
+    },
+    {
+      "value": 2,
+      "text": "Do not use"
+    },
+    {
+      "value": 3,
+      "text": "DC lead-off detection turned on"
+    }
+  ],
+  "PDn": [
+    {
+      "value": 0,
+      "text": "Normal operation"
+    },
+    {
+      "value": 128,
+      "text": "Channel power-down."
+    }
+  ],
+  "GAINn": [
+    {
+      "value": 0,
+      "text": "PGA gain 6"
+    },
+    {
+      "value": 16,
+      "text": "PGA gain 1"
+    },
+    {
+      "value": 32,
+      "text": "PGA gain 2"
+    },
+    {
+      "value": 48,
+      "text": "PGA gain 3"
+    },
+    {
+      "value": 64,
+      "text": "PGA gain 4"
+    },
+    {
+      "value": 80,
+      "text": "PGA gain 8"
+    },
+    {
+      "value": 96,
+      "text": "PGA gain 12"
+    }
+  ],
+  "MUXn": [
+    {
+      "value": 0,
+      "text": "Normal electrode input"
+    },
+    {
+      "value": 1,
+      "text": "Input shorted (for offset or noise measurements)"
+    },
+    {
+      "value": 2,
+      "text": "Used in conjunction with RLD_MEAS bit for RLD measurements. See the Right Leg Drive (RLD) DC Bias Circuit subsection of the ECG-Specific Functions section for more details"
+    },
+    {
+      "value": 3,
+      "text": "MVDD for supply measurement"
+    },
+    {
+      "value": 4,
+      "text": "Temperature sensor"
+    },
+    {
+      "value": 5,
+      "text": "Test signal"
+    },
+    {
+      "value": 6,
+      "text": "RLD_DRP (positive electrode is the driver)"
+    },
+    {
+      "value": 7,
+      "text": "RLD_DRN (negative electrode is the driver)"
+    }
+  ],
+  "RLD8P": [
+    {
+      "value": 0,
+      "text": "IN8P to RLD is disabled"
+    },
+    {
+      "value": 128,
+      "text": "IN8P to RLD is enabled"
+    }
+  ],
+  "RLD7P": [
+    {
+      "value": 0,
+      "text": "IN7P to RLD is disabled"
+    },
+    {
+      "value": 64,
+      "text": "IN7P to RLD is enabled"
+    }
+  ],
+  "RLD6P": [
+    {
+      "value": 0,
+      "text": "IN6P to RLD is disabled"
+    },
+    {
+      "value": 32,
+      "text": "IN6P to RLD is enabled"
+    }
+  ],
+  "RLD5P": [
+    {
+      "value": 0,
+      "text": "IN5P to RLD is disabled"
+    },
+    {
+      "value": 16,
+      "text": "IN5P to RLD is enabled"
+    }
+  ],
+  "RLD4P": [
+    {
+      "value": 0,
+      "text": "IN4P to RLD is disabled"
+    },
+    {
+      "value": 8,
+      "text": "IN4P to RLD is enabled"
+    }
+  ],
+  "RLD3P": [
+    {
+      "value": 0,
+      "text": "IN3P to RLD is disabled"
+    },
+    {
+      "value": 4,
+      "text": "IN3P to RLD is enabled"
+    }
+  ],
+  "RLD2P": [
+    {
+      "value": 0,
+      "text": "IN2P to RLD is disabled"
+    },
+    {
+      "value": 2,
+      "text": "IN2P to RLD is enabled"
+    }
+  ],
+  "RLD1P": [
+    {
+      "value": 0,
+      "text": "IN1P to RLD is disabled"
+    },
+    {
+      "value": 1,
+      "text": "IN1P to RLD is enabled"
+    }
+  ],
+  "RLD8N": [
+    {
+      "value": 0,
+      "text": "IN8N to RLD is disabled"
+    },
+    {
+      "value": 128,
+      "text": "IN8N to RLD is enabled"
+    }
+  ],
+  "RLD7N": [
+    {
+      "value": 0,
+      "text": "IN7N to RLD is disabled"
+    },
+    {
+      "value": 64,
+      "text": "IN7N to RLD is enabled"
+    }
+  ],
+  "RLD6N": [
+    {
+      "value": 0,
+      "text": "IN6N to RLD is disabled"
+    },
+    {
+      "value": 32,
+      "text": "IN6N to RLD is enabled"
+    }
+  ],
+  "RLD5N": [
+    {
+      "value": 0,
+      "text": "IN5N to RLD is disabled"
+    },
+    {
+      "value": 16,
+      "text": "IN5N to RLD is enabled"
+    }
+  ],
+  "RLD4N": [
+    {
+      "value": 0,
+      "text": "IN4N to RLD is disabled"
+    },
+    {
+      "value": 8,
+      "text": "IN4N to RLD is enabled"
+    }
+  ],
+  "RLD3N": [
+    {
+      "value": 0,
+      "text": "IN3N to RLD is disabled"
+    },
+    {
+      "value": 4,
+      "text": "IN3N to RLD is enabled"
+    }
+  ],
+  "RLD2N": [
+    {
+      "value": 0,
+      "text": "IN2N to RLD is disabled"
+    },
+    {
+      "value": 2,
+      "text": "IN2N to RLD is enabled"
+    }
+  ],
+  "RLD1N": [
+    {
+      "value": 0,
+      "text": "IN1N to RLD is disabled"
+    },
+    {
+      "value": 1,
+      "text": "IN1N to RLD is enabled"
+    }
+  ],
+  "LOFF8P": [
+    {
+      "value": 0,
+      "text": "IN8P lead off is disabled"
+    },
+    {
+      "value": 128,
+      "text": "IN8P lead off is enabled"
+    }
+  ],
+  "LOFF7P": [
+    {
+      "value": 0,
+      "text": "IN7P lead off is disabled"
+    },
+    {
+      "value": 64,
+      "text": "IN7P lead off is enabled"
+    }
+  ],
+  "LOFF6P": [
+    {
+      "value": 0,
+      "text": "IN6P lead off is disabled"
+    },
+    {
+      "value": 32,
+      "text": "IN6P lead off is enabled"
+    }
+  ],
+  "LOFF5P": [
+    {
+      "value": 0,
+      "text": "IN5P lead off is disabled"
+    },
+    {
+      "value": 16,
+      "text": "IN5P lead off is enabled"
+    }
+  ],
+  "LOFF4P": [
+    {
+      "value": 0,
+      "text": "IN4P lead off is disabled"
+    },
+    {
+      "value": 8,
+      "text": "IN4P lead off is enabled"
+    }
+  ],
+  "LOFF3P": [
+    {
+      "value": 0,
+      "text": "IN3P lead off is disabled"
+    },
+    {
+      "value": 4,
+      "text": "IN3P lead off is enabled"
+    }
+  ],
+  "LOFF2P": [
+    {
+      "value": 0,
+      "text": "IN2P lead off is disabled"
+    },
+    {
+      "value": 2,
+      "text": "IN2P lead off is enabled"
+    }
+  ],
+  "LOFF1P": [
+    {
+      "value": 0,
+      "text": "IN1P lead off is disabled"
+    },
+    {
+      "value": 1,
+      "text": "IN1P lead off is enabled"
+    }
+  ],
+  "LOFF8N": [
+    {
+      "value": 0,
+      "text": "IN8N lead off is disabled"
+    },
+    {
+      "value": 128,
+      "text": "IN8N lead off is enabled"
+    }
+  ],
+  "LOFF7N": [
+    {
+      "value": 0,
+      "text": "IN7N lead off is disabled"
+    },
+    {
+      "value": 64,
+      "text": "IN7N lead off is enabled"
+    }
+  ],
+  "LOFF6N": [
+    {
+      "value": 0,
+      "text": "IN6N lead off is disabled"
+    },
+    {
+      "value": 32,
+      "text": "IN6N lead off is enabled"
+    }
+  ],
+  "LOFF5N": [
+    {
+      "value": 0,
+      "text": "IN5N lead off is disabled"
+    },
+    {
+      "value": 16,
+      "text": "IN5N lead off is enabled"
+    }
+  ],
+  "LOFF4N": [
+    {
+      "value": 0,
+      "text": "IN4N lead off is disabled"
+    },
+    {
+      "value": 8,
+      "text": "IN4N lead off is enabled"
+    }
+  ],
+  "LOFF3N": [
+    {
+      "value": 0,
+      "text": "IN3N lead off is disabled"
+    },
+    {
+      "value": 4,
+      "text": "IN3N lead off is enabled"
+    }
+  ],
+  "LOFF2N": [
+    {
+      "value": 0,
+      "text": "IN2N lead off is disabled"
+    },
+    {
+      "value": 2,
+      "text": "IN2N lead off is enabled"
+    }
+  ],
+  "LOFF1N": [
+    {
+      "value": 0,
+      "text": "IN1N lead off is disabled"
+    },
+    {
+      "value": 1,
+      "text": "IN1N lead off is enabled"
+    }
+  ],
+  "LOFF_FLIP8": [
+  	{
+  		"value": 0,
+  		"text": "No Flip: IN8P is pulled to AVDD and IN8N pulled to AVSS"
+  	},
+  	{
+  		"value": 128,
+  		"text": "Flipped: IN8P is pulled to AVSS and IN8N pulled to AVDD"
+  	}
+  ],
+  "LOFF_FLIP7": [
+  	{
+  		"value": 0,
+  		"text": "No Flip: IN7P is pulled to AVDD and IN7N pulled to AVSS"
+  	},
+  	{
+  		"value": 64,
+  		"text": "Flipped: IN7P is pulled to AVSS and IN7N pulled to AVDD"
+  	}
+  ],
+  "LOFF_FLIP6": [
+  	{
+  		"value": 0,
+  		"text": "No Flip: IN6P is pulled to AVDD and IN6N pulled to AVSS"
+  	},
+  	{
+  		"value": 32,
+  		"text": "Flipped: IN6P is pulled to AVSS and IN6N pulled to AVDD"
+  	}
+  ],
+  "LOFF_FLIP5": [
+  	{
+  		"value": 0,
+  		"text": "No Flip: IN5P is pulled to AVDD and IN5N pulled to AVSS"
+  	},
+  	{
+  		"value": 16,
+  		"text": "Flipped: IN5P is pulled to AVSS and IN5N pulled to AVDD"
+  	}
+  ],
+  "LOFF_FLIP4": [
+  	{
+  		"value": 0,
+  		"text": "No Flip: IN4P is pulled to AVDD and IN4N pulled to AVSS"
+  	},
+  	{
+  		"value": 8,
+  		"text": "Flipped: IN4P is pulled to AVSS and IN4N pulled to AVDD"
+  	}
+  ],
+  "LOFF_FLIP3": [
+  	{
+  		"value": 0,
+  		"text": "No Flip: IN3P is pulled to AVDD and IN3N pulled to AVSS"
+  	},
+  	{
+  		"value": 4,
+  		"text": "Flipped: IN3P is pulled to AVSS and IN3N pulled to AVDD"
+  	}
+  ],
+  "LOFF_FLIP2": [
+  	{
+  		"value": 0,
+  		"text": "No Flip: IN2P is pulled to AVDD and IN2N pulled to AVSS"
+  	},
+  	{
+  		"value": 2,
+  		"text": "Flipped: IN2P is pulled to AVSS and IN2N pulled to AVDD"
+  	}
+  ],
+  "LOFF_FLIP1": [
+  	{
+  		"value": 0,
+  		"text": "No Flip: IN1P is pulled to AVDD and IN1N pulled to AVSS"
+  	},
+  	{
+  		"value": 1,
+  		"text": "Flipped: IN1P is pulled to AVSS and IN1N pulled to AVDD"
+  	}
+  ],
+  "PACEE": [
+  	{
+  		"value": 0,
+  		"text": "Pace even channel 2 (Only one channel may be selected at any time)"
+  	},
+  	{
+  		"value": 8,
+  		"text": "Pace even channel 4 (Only one channel may be selected at any time)"
+  	},
+  	{
+  		"value": 16,
+  		"text": "Pace even channel 6 (Only one channel may be selected at any time)"
+  	},
+  	{
+  		"value": 24,
+  		"text": "Pace even channel 8 (Only one channel may be selected at any time)"
+  	}
+  ],
+  "PACEO": [
+  	{
+  		"value": 0,
+  		"text": "Pace odd channel 1 (Only one channel may be selected at any time)"
+  	},
+  	{
+  		"value": 2,
+  		"text": "Pace odd channel 3 (Only one channel may be selected at any time)"
+  	},
+  	{
+  		"value": 4,
+  		"text": "Pace odd channel 5 (Only one channel may be selected at any time)"
+  	},
+  	{
+  		"value": 6,
+  		"text": "Pace odd channel 7 (Only one channel may be selected at any time)"
+  	}
+  ],
+  "PD_PACE": [
+  	{
+  		"value": 0,
+  		"text": "Pace detect buffer turned off"
+  	},
+  	{
+  		"value": 1,
+  		"text": "Pace detect buffer turned on"
+  	}
+  ],
+  "aVF_CH6": [
+  	{
+  		"value": 0,
+  		"text": "Enable (WCTA + WCTB)/2 to the negative input of channel 6"
+  	},
+  	{
+  		"value": 128,
+  		"text": "Disable (WCTA + WCTB)/2 to the negative input of channel 6"
+  	}
+  ],
+  "aVF_CH5": [
+  	{
+  		"value": 0,
+  		"text": "Enable (WCTA + WCTB)/2 to the negative input of channel 5"
+  	},
+  	{
+  		"value": 64,
+  		"text": "Disable (WCTA + WCTB)/2 to the negative input of channel 5"
+  	}
+  ],
+  "aVF_CH7": [
+  	{
+  		"value": 0,
+  		"text": "Enable (WCTA + WCTB)/2 to the negative input of channel 7"
+  	},
+  	{
+  		"value": 32,
+  		"text": "Disable (WCTA + WCTB)/2 to the negative input of channel 7"
+  	}
+  ],
+  "aVF_CH4": [
+  	{
+  		"value": 0,
+  		"text": "Enable (WCTA + WCTB)/2 to the negative input of channel 4"
+  	},
+  	{
+  		"value": 16,
+  		"text": "Disable (WCTA + WCTB)/2 to the negative input of channel 4"
+  	}
+  ],
+  "PD_WCTA": [
+  	{
+  		"value": 0,
+  		"text": "Powered down WCTA"
+  	},
+  	{
+  		"value": 8,
+  		"text": "Powered on WCTA"
+  	}
+  ],
+  "WCTA": [
+  	{
+  		"value": 0,
+  		"text": "Channel 1 positive input connected to WCTA amplifier"
+  	},
+  	{
+  		"value": 1,
+  		"text": "Channel 1 negative input connected to WCTA amplifier"
+  	},
+  	{
+  		"value": 2,
+  		"text": "Channel 2 positive input connected to WCTA amplifier"
+  	},
+  	{
+  		"value": 3,
+  		"text": "Channel 2 negative input connected to WCTA amplifier"
+  	},
+  	{
+  		"value": 4,
+  		"text": "Channel 3 positive input connected to WCTA amplifier"
+  	},
+  	{
+  		"value": 5,
+  		"text": "Channel 3 negative input connected to WCTA amplifier"
+  	},
+  	{
+  		"value": 6,
+  		"text": "Channel 4 positive input connected to WCTA amplifier"
+  	},
+  	{
+  		"value": 7,
+  		"text": "Channel 4 negative input connected to WCTA amplifier"
+  	}
+  ],
+  "PD_WCTC": [
+  	{
+  		"value": 0,
+  		"text": "Powered down WCTC"
+  	},
+  	{
+  		"value": 128,
+  		"text": "Powered on WCTC"
+  	}
+  ],
+  "PD_WCTB": [
+  	{
+  		"value": 0,
+  		"text": "Powered down PD_WCTB"
+  	},
+  	{
+  		"value": 64,
+  		"text": "Powered on PD_WCTB"
+  	}
+  ],
+  "WCTB": [
+  	{
+  		"value": 0,
+  		"text": "Channel 1 positive input connected to WCTB amplifier"
+  	},
+  	{
+  		"value": 8,
+  		"text": "Channel 1 negative input connected to WCTB amplifier"
+  	},
+  	{
+  		"value": 16,
+  		"text": "Channel 2 positive input connected to WCTB amplifier"
+  	},
+  	{
+  		"value": 24,
+  		"text": "Channel 2 negative input connected to WCTB amplifier"
+  	},
+  	{
+  		"value": 32,
+  		"text": "Channel 3 positive input connected to WCTB amplifier"
+  	},
+  	{
+  		"value": 40,
+  		"text": "Channel 3 negative input connected to WCTB amplifier"
+  	},
+  	{
+  		"value": 48,
+  		"text": "Channel 4 positive input connected to WCTB amplifier"
+  	},
+  	{
+  		"value": 56,
+  		"text": "Channel 4 negative input connected to WCTB amplifier"
+  	}
+  ],
+  "WCTC": [
+  	{
+  		"value": 0,
+  		"text": "Channel 1 positive input connected to WCTC amplifier"
+  	},
+  	{
+  		"value": 1,
+  		"text": "Channel 1 negative input connected to WCTC amplifier"
+  	},
+  	{
+  		"value": 2,
+  		"text": "Channel 2 positive input connected to WCTC amplifier"
+  	},
+  	{
+  		"value": 3,
+  		"text": "Channel 2 negative input connected to WCTC amplifier"
+  	},
+  	{
+  		"value": 4,
+  		"text": "Channel 3 positive input connected to WCTC amplifier"
+  	},
+  	{
+  		"value": 5,
+  		"text": "Channel 3 negative input connected to WCTC amplifier"
+  	},
+  	{
+  		"value": 6,
+  		"text": "Channel 4 positive input connected to WCTC amplifier"
+  	},
+  	{
+  		"value": 7,
+  		"text": "Channel 4 negative input connected to WCTC amplifier"
+  	}
+  ]
+}

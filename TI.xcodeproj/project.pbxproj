@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		14C2E8BD73C898D397F6856F /* Pods_TI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 442BC7D2FA365270EE526E2B /* Pods_TI.framework */; };
 		79CC6173211B2D6A00FB4C5B /* ADS1298_Configs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC6172211B2D6A00FB4C5B /* ADS1298_Configs.swift */; };
+		79DF2D1D2121D32A00B349B8 /* description.json in Resources */ = {isa = PBXBuildFile; fileRef = 79DF2D1C2121D32A00B349B8 /* description.json */; };
 		89A6E2382114B273007687B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A6E2372114B273007687B8 /* AppDelegate.swift */; };
 		89A6E23A2114B273007687B8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A6E2392114B273007687B8 /* ViewController.swift */; };
 		89A6E23C2114B276007687B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89A6E23B2114B276007687B8 /* Assets.xcassets */; };
@@ -45,6 +46,7 @@
 		442BC7D2FA365270EE526E2B /* Pods_TI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CE3C885F05C2E94433989B0 /* Pods-TI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TI.release.xcconfig"; path = "Pods/Target Support Files/Pods-TI/Pods-TI.release.xcconfig"; sourceTree = "<group>"; };
 		79CC6172211B2D6A00FB4C5B /* ADS1298_Configs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADS1298_Configs.swift; sourceTree = "<group>"; };
+		79DF2D1C2121D32A00B349B8 /* description.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = description.json; sourceTree = "<group>"; };
 		89A6E2342114B272007687B8 /* TI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89A6E2372114B273007687B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89A6E2392114B273007687B8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 		89C20269211A516800A23CA4 /* ConfigController */ = {
 			isa = PBXGroup;
 			children = (
+				79DF2D1C2121D32A00B349B8 /* description.json */,
 				89C2026A211A516800A23CA4 /* ConfigController.swift */,
 				79CC6172211B2D6A00FB4C5B /* ADS1298_Configs.swift */,
 			);
@@ -317,6 +320,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				89A6E23C2114B276007687B8 /* Assets.xcassets in Resources */,
+				79DF2D1D2121D32A00B349B8 /* description.json in Resources */,
 				89A6E23F2114B276007687B8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
