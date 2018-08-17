@@ -91,10 +91,10 @@ class Serial: NSObject, ORSSerialPortDelegate, NSUserNotificationCenterDelegate
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "newUARTDataIsReady"), object: nil, userInfo: ["data": num ])
             print(string)
         }*/
-        let value = data.withUnsafeBytes { (ptr: UnsafePointer<Double>) -> Double in
-                return ptr.pointee
+        if let roundtrip = Double(data: data)
+        {
+            print(roundtrip)
         }
-        print(value)
     }
     
     func serialPortWasRemoved(fromSystem serialPort: ORSSerialPort) {
@@ -200,3 +200,25 @@ class Serial: NSObject, ORSSerialPortDelegate, NSUserNotificationCenterDelegate
     }
     
 }
+
+protocol DataConvertible {
+    init?(data: Data)
+    var data: Data { get }
+}
+
+extension DataConvertible {
+    
+    init?(data: Data) {
+        guard data.count == MemoryLayout<Self>.size else { return nil }
+        self = data.withUnsafeBytes { $0.pointee }
+    }
+    
+    var data: Data {
+        var value = self
+        return Data(buffer: UnsafeBufferPointer(start: &value, count: 1))
+    }
+}
+
+extension Int : DataConvertible { }
+extension Float : DataConvertible { }
+extension Double : DataConvertible { }
