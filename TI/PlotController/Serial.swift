@@ -86,11 +86,15 @@ class Serial: NSObject, ORSSerialPortDelegate, NSUserNotificationCenterDelegate
     }
     
     func serialPort(_ serialPort: ORSSerialPort, didReceive data: Data) {
-        if let string = NSString(data: data, encoding: String.Encoding.utf8.rawValue) {
-            //let num = Int(Float((string.components(separatedBy: "\r\n")[5]).components(separatedBy: "\t\t")[1])!)
-            //NotificationCenter.default.post(name: NSNotification.Name(rawValue: "newUARTDataIsReady"), object: nil, userInfo: ["data": num ])
+        /*if let string = NSString(data: data, encoding: String.Encoding.utf8.rawValue) {
+            let num = Int(Float((string.components(separatedBy: "\r\n")[5]).components(separatedBy: "\t\t")[1])!)
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "newUARTDataIsReady"), object: nil, userInfo: ["data": num ])
             print(string)
+        }*/
+        let value = data.withUnsafeBytes { (ptr: UnsafePointer<Double>) -> Double in
+                return ptr.pointee
         }
+        print(value)
     }
     
     func serialPortWasRemoved(fromSystem serialPort: ORSSerialPort) {
